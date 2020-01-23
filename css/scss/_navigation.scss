@@ -1,0 +1,15 @@
+/*---------------------------------------------
+Site Navigation
+---------------------------------------------*/
+
+
+/* Hover Open Dropdowns on Desktop
+---------------------------------------------*/
+@include media-breakpoint-up(md) {
+	.nav-item.has-child:hover{
+		.dropdown-menu{
+			visibility: visible;
+			display: block;
+		}
+	}
+}

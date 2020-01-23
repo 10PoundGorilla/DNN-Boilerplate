@@ -1,0 +1,36 @@
+<div class="collapse navbar-collapse" id="navbarNav">
+	<ul class="navbar-nav">
+		[*>NODE-TOP]
+	</ul>
+</div>
+    [>NODE-TOP]
+        <li class="nav-item [?NODE]dropdown [/?][?SELECTED]active[/?]">
+        [?ENABLED]
+            <a class="nav-link [?NODE]dropdown-toggle [/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]
+            [?NODE]data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[/?]>
+                <span>[=TEXT]</span>
+            </a>
+        [?ELSE]
+            <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
+        [/?]
+        [?NODE]
+            <ul class="dropdown-menu">
+            [*>NODE]
+            </ul>
+        [/?]
+        </li>
+    [/>]
+	[>NODE]
+        <li class="nav-item [?NODE]dropdown [/?][?SELECTED]active[/?]">
+        [?ENABLED]
+            <a class="nav-link" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]><span>[=TEXT]</span></a>
+        [?ELSE]
+            <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
+        [/?]
+        [?NODE]
+            <ul class="dropdown-menu">
+            [*>NODE]
+            </ul>
+        [/?]
+        </li>
+    [/>]

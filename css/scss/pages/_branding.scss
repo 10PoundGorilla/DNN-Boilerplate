@@ -1,0 +1,208 @@
+.branding-guidelines {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 30px 0;
+
+    @include respond-below(md) {
+        padding: 20px 15px 30px 15px;
+    }
+
+    .section-heading {
+        cursor: pointer;
+        margin: 0;
+        padding: 15px 18px;
+        font-weight: 600;
+        position: relative;
+        font-size: 26px;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 9px;
+            border-color: transparent transparent transparent $secondary;
+            transition: all 0.25s ease-in-out;
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+        }
+
+        &.active {
+            border: none;
+
+            &:before {
+                transform: translateY(-50%) rotate(90deg);
+                -webkit-transform: translateY(-50%) rotate(90deg);
+                -moz-transform: translateY(-50%) rotate(90deg);
+                -ms-transform: translateY(-50%) rotate(90deg);
+                -o-transform: translateY(-50%) rotate(90deg);
+                margin-top: -1px;
+            }
+        }
+    }
+
+    .section-content {
+        background: $light;
+        padding: 20px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .section {
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 0;
+
+        &.color-palette {
+            padding-bottom: 0;
+
+            .section-content {
+                padding-bottom: 0;
+            }
+        }
+
+        &.active {
+            border: none;
+        }
+    }
+
+    .style-heading {
+        margin-bottom: 2px;
+
+        span.color {
+            font-family: courier;
+            font-style: normal;
+            color: #96969a;
+            opacity: 0.9;
+            font-weight: 200;
+            margin-left: 4px;
+            font-size: 80%;
+        }
+    }
+
+    .style-summary {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 0;
+        font-family: $font-1;
+    }
+
+    .swatch {
+        padding: 0 35px 0 85px;
+        margin-bottom: 20px;
+        min-height: 70px;
+
+        .swatch-block {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: -85px;
+            display: block;
+            float: left;
+            background: #eaeaea;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+        }
+    }
+
+    .type,
+    .buttons {
+        margin-bottom: 25px;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 15px;
+
+        &:last-child {
+            border: none;
+            margin: 0;
+        }
+
+        p {
+            font-family: $font-1;
+            margin-bottom: 0;
+        }
+    }
+
+    .type {
+        border: none;
+
+        .h1 {
+            line-height: 1;
+        }
+    }
+
+    .type-heading,
+    .button-heading {
+        margin: 0;
+        font-weight: 400;
+        color: $info;
+        padding-bottom: 0;
+        font-size: 20px;
+    }
+
+
+    .button-heading {
+        margin-bottom: 10px;
+    }
+
+    .type-heading {
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        padding-bottom: 20px;
+
+        @include respond-below(md) {
+            padding-bottom: 15px;
+        }
+
+        p {
+            display: inline-block;
+            margin: 0 15px 0 0;
+
+            @include respond-below(md) {
+                display: block;
+                margin: 0 0 15px 0;
+            }
+        }
+
+        .btn {
+            @include respond-below(md) {
+                max-width: 200px;
+            }
+        }
+
+        .bg-white-button {
+            background: $info;
+            padding: 15px;
+        }
+    }
+
+    .blockquote,
+    blockquote {
+        margin-top: 10px;
+
+        @include respond-above(lg) {
+            width: 50%;
+        }
+    }
+}
