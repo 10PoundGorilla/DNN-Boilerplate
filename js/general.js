@@ -2,6 +2,26 @@
 CUSTOM SCRIPTS
 --------------*/
 
+// On Page Ready
+$(document).ready(function() {
+  site.init();
+
+
+  // Bootstrap Multi-level Toggle
+  $('#navbarNav .dropdown-toggle').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+});
+
+
+// On Page Resize
+$(window).resize(function(){
+
+});
+
 
 // On Page Ready
 var site = {
@@ -108,15 +128,3 @@ var site = {
     site.styleGuideEvents();
   }
 };
-
-
-// On Page Ready
-$(document).ready(function() {
-  site.init();
-});
-
-
-// On Page Resize
-$(window).resize(function(){
-
-});
