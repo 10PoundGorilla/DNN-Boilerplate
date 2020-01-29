@@ -3,9 +3,11 @@ Site Navigation
 ---------------------------------------------*/
 
 
-/* Hover Open Dropdowns on Desktop
----------------------------------------------*/
+
 @include media-breakpoint-up(md) {
+
+/* Hover Open Dropdowns on Desktop
+---------------------------------------------*/	
 	.nav-item.has-child:hover{
 		.dropdown-menu{
 			visibility: visible;
@@ -13,6 +15,8 @@ Site Navigation
 		}
 	}
 
+/* Position Last Dropdown Right
+---------------------------------------------*/
 	.navbar{
 		.navbar-nav{
 			.nav-item:last-child{
