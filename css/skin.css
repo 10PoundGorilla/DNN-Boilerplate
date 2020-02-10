@@ -10384,17 +10384,52 @@ body:not(.dnnEditState) .sc-content-block-menu {
 /*---------------------------------------------
 Site Navigation
 ---------------------------------------------*/
+/* Dropdown Arrow Styles
+---------------------------------------------*/
+#primaryNav .nav-item.dropdown {
+  padding-right: 20px;
+}
+#primaryNav .nav-item.dropdown .dropdown-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+#primaryNav .nav-item.dropdown .dropdown-toggle:after {
+  margin-top: 18px;
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+#primaryNav .nav-item.dropdown .dropdown-toggle--open:after {
+  behavior: url(-ms-transform.htc);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+#primaryNav .nav-item.dropdown .dropdown-menu {
+  margin-top: 0px;
+}
+
 /* Hover Open Dropdowns on Desktop
 ---------------------------------------------*/
-@media (min-width: 768px) {
-  .nav-item.has-child:hover .dropdown-menu {
-    visibility: visible;
-    display: block;
-  }
+.nav-item.has-child:hover .dropdown-menu {
+  visibility: visible;
+  display: block;
+}
 
-  .navbar .navbar-nav .nav-item:last-child .dropdown-menu {
+@media (min-width: 768px) {
+  /* Position Last Dropdown Right
+  ---------------------------------------------*/
+  .navbar .navbar-nav .nav-item:nth-last-child(1) .dropdown-menu,
+.navbar .navbar-nav .nav-item:nth-last-child(2) .dropdown-menu {
     left: initial;
-    right: 0px;
+    right: -1px;
   }
 }
 /* DNN Boostrap Menu Conflict Fixes
@@ -10413,6 +10448,9 @@ Site Navigation
   #navbarNav .navbar-nav .nav-item {
     border-bottom: solid 1px #979797;
   }
+  #navbarNav .navbar-nav .nav-item.dropdown {
+    padding-right: 0px;
+  }
   #navbarNav .navbar-nav .nav-item.dropdown .dropdown-menu {
     padding: 0px;
     border: 0px;
@@ -10428,6 +10466,102 @@ Site Navigation
     margin-left: 30px;
   }
 }
+/* Mobile Adjustments - Optional
+---------------------------------------------*/
+/* Close Icon - Simple option
+---------------------------------------------*/
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  background-size: 75% 75%;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjJweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjIgMjMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYyICg5MTM5MCkgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+Q29tYmluZWQgU2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsLW9wYWNpdHk9IjAuNSI+CiAgICAgICAgPHBhdGggZD0iTTEuMTAwNTA1MDYsMC42NzU2MjQ4NDUgTDExLjE3NzM3OTQsMTAuNzUyMTc4MiBMMjAuNjYyOTIyNywxLjI2NjIwMTAyIEMyMC44NTgxODQ4LDEuMDcwOTM4ODcgMjEuMTc0NzY3MywxLjA3MDkzODg3IDIxLjM3MDAyOTUsMS4yNjYyMDEwMiBDMjEuNTY1MjkxNiwxLjQ2MTQ2MzE2IDIxLjU2NTI5MTYsMS43NzgwNDU2NSAyMS4zNzAwMjk1LDEuOTczMzA3OCBMMTEuODg0Mzc5NCwxMS40NTkxNzgyIEwyMS42MDY2MDE3LDIxLjE4MTcyMTUgQzIxLjgwMTg2MzksMjEuMzc2OTgzNiAyMS44MDE4NjM5LDIxLjY5MzU2NjEgMjEuNjA2NjAxNywyMS44ODg4MjgzIEMyMS40MTEzMzk2LDIyLjA4NDA5MDQgMjEuMDk0NzU3MSwyMi4wODQwOTA0IDIwLjg5OTQ5NDksMjEuODg4ODI4MyBMMTEuMTc3Mzc5NCwxMi4xNjYxNzgyIEwwLjg2MzkzMjc5OCwyMi40Nzk0MDQ1IEMwLjY2ODY3MDY1MiwyMi42NzQ2NjY2IDAuMzUyMDg4MTYyLDIyLjY3NDY2NjYgMC4xNTY4MjYwMTcsMjIuNDc5NDA0NSBDLTAuMDM4NDM2MTI5MywyMi4yODQxNDIzIC0wLjAzODQzNjEyOTMsMjEuOTY3NTU5OCAwLjE1NjgyNjAxNywyMS43NzIyOTc3IEwxMC40NzAzNzk0LDExLjQ1OTE3ODIgTDAuMzkzMzk4MjgyLDEuMzgyNzMxNjMgQzAuMTk4MTM2MTM2LDEuMTg3NDY5NDggMC4xOTgxMzYxMzYsMC44NzA4ODY5OTEgMC4zOTMzOTgyODIsMC42NzU2MjQ4NDUgQzAuNTg4NjYwNDI4LDAuNDgwMzYyNjk5IDAuOTA1MjQyOTE4LDAuNDgwMzYyNjk5IDEuMTAwNTA1MDYsMC42NzU2MjQ4NDUgWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjMDAwMDAwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==");
+}
+
+/* Hamburger Icon - Fancy option
+---------------------------------------------*/
+.navbar-toggler .navbar-toggler-icon {
+  background-image: initial !important;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.navbar-toggler .navbar-toggler-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  background: #1B559B;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.navbar-toggler .navbar-toggler-icon span:nth-child(even) {
+  left: 50%;
+  border-radius: 0 9px 9px 0;
+}
+.navbar-toggler .navbar-toggler-icon span:nth-child(odd) {
+  left: 0px;
+  border-radius: 9px 0 0 9px;
+}
+.navbar-toggler .navbar-toggler-icon span:nth-child(1), .navbar-toggler .navbar-toggler-icon span:nth-child(2) {
+  top: 3px;
+}
+.navbar-toggler .navbar-toggler-icon span:nth-child(3), .navbar-toggler .navbar-toggler-icon span:nth-child(4) {
+  top: 13px;
+}
+.navbar-toggler .navbar-toggler-icon span:nth-child(5), .navbar-toggler .navbar-toggler-icon span:nth-child(6) {
+  top: 24px;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(1), .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(6) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(2), .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(5) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(1) {
+  left: 3px;
+  top: 10px;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(2) {
+  left: calc(50% - 3px);
+  top: 10px;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(5) {
+  left: 3px;
+  top: 22px;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(6) {
+  left: calc(50% - 3px);
+  top: 22px;
+}
+
 /*---------------------------------------------
 2sxc Module
 ---------------------------------------------*/

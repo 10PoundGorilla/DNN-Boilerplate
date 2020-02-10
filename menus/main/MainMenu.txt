@@ -1,39 +1,44 @@
 <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-	<ul class="navbar-nav">
+	<ul id="primaryNav" class="navbar-nav">
 		[*>NODE-TOP]
 	</ul>
 </div>
-    [>NODE-TOP]
-        <li class="nav-item [?NODE]dropdown [/?][?SELECTED]active[/?]">
-        [?ENABLED]
-            <a class="nav-link [?NODE]dropdown-toggle[/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]
-            [?NODE]data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[/?]>
-                <span>[=TEXT]</span>
-            </a>
-        [?ELSE]
-            <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
-        [/?]
-        [?NODE]
-            <ul class="dropdown-menu">
-            [*>NODE]
-            </ul>
-        [/?]
-        </li>
-    [/>]
-	[>NODE]
-        <li class="nav-item [?NODE]dropdown [/?][?SELECTED]active[/?]">
-        [?ENABLED]
-            <a class="nav-link [?NODE]dropdown-toggle[/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]
-            [?NODE]data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[/?]>
-                <span>[=TEXT]</span>
-            </a>
-        [?ELSE]
-            <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
-        [/?]
-        [?NODE]
-            <ul class="dropdown-menu">
-            [*>NODE]
-            </ul>
-        [/?]
-        </li>
-    [/>]
+
+
+<!-- First Level Items -->
+[>NODE-TOP]
+    <li class="nav-item pageID-[=ID] [?NODE] dropdown [/?] [?SELECTED] active [/?] [?BREADCRUMB] active-child [/?]">
+    [?ENABLED]
+        <a class="nav-link" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]>
+            <span>[=TEXT]</span>
+        </a>
+    [?ELSE]
+        <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
+    [/?]
+    [?NODE]
+        <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+        <ul class="dropdown-menu">
+        [*>NODE]
+        </ul>
+    [/?]
+    </li>
+[/>]
+
+<!-- Second+ Level Items -->
+[>NODE]
+    <li class="nav-item pageID-[=ID] [?NODE] dropdown [/?] [?SELECTED] active [/?] [?!SELECTED][?BREADCRUMB] active-child [/?][/?]">
+    [?ENABLED]
+        <a class="nav-link" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]>
+            <span>[=TEXT]</span>
+        </a>
+    [?ELSE]
+        <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
+    [/?]
+    [?NODE]
+        <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+        <ul class="dropdown-menu">
+        [*>NODE]
+        </ul>
+    [/?]
+    </li>
+[/>]
