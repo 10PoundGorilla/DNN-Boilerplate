@@ -3,110 +3,22 @@ DNN Fixes
 ---------------------------------------------*/
 
 
-/* Prevent Horizontal Overflow
----------------------------------------------*/
-html {
-  overflow-x: hidden;
+/*
+	Insure module popup dialogs display 
+	in the center without overflow.
+*/ 
+body{
+  height: 100vh;
 }
 
-
-/* Position DNN Dialog
----------------------------------------------*/
-.dnnModuleDialog {
-  position: fixed !important;
-  left: calc(50% - 323px) !important;
-  top: calc(50% - 240px) !important;
-}
-
-/* Add Module Dialog Positioning
----------------------------------------------*/
-.DnnModule.floating{
-  top: calc(50vh - 66px) !important;
-  left: calc(50vw - 66px) !important;
-}
-
-.dnnFormPopup{
-  top: calc(50vh - 102px) !important;
-  position: fixed;
-}
-
-.ui-dialog-titlebar > .ui-dialog-titlebar-close{
-  background-position: 14px 6px !important;
-}
-
-
-/* Bootstrap Column Wrapping
----------------------------------------------*/
-.row {
-  clear: both;
-}
-
-
-/* Glypher Icons
----------------------------------------------*/
-[class*="icon-sxc-"]:before {
-  font-family: "inpage-icons" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  display: inline-block !important;
-  line-height: 28px !important;
-}
-
-
-/* Add Module Menus
----------------------------------------------*/
-body:not(.dnnEditState) {
-  .sc-content-block-menu {
-    display: none !important;
-  }
-}
-
-
-/* Set DNN Panes Full Width
----------------------------------------------*/
-.DNNEmptyPane{
-  width:100%;
-}
-
-
-/* 2sxc Edit Menu
----------------------------------------------*/
-.DnnModule {
-  position: relative;
-
-  &:not(:hover) {
-    .sc-menu {
-      opacity: 0;
-    }
-  }
-
-  &:hover {
-    .sc-menu {
-      opacity: 1;
-    }
-  }
-
-  .sc-menu {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-  }
-}
-
-
-/* 2sxc Menu Glow
----------------------------------------------*/
-.sc-cb-pane-glow {
-  background-color: transparent !important;
-}
-
-
-/* DNN Persona Bar Spacing
----------------------------------------------*/
-@media (max-width: 991px) {
-  #dnn_RightSidebar {
-    margin-top: 30px;
-  }
+/*
+	Keep popup dialog from flowing
+	under the persona bar.
+*/
+@media(max-width: 1100px){
+	.ui-dialog.dnnFormPopup{
+		width: calc(100% - 190px) !important;
+		left: 110px !important;
+		margin-left: 0px !important;
+	}
 }
