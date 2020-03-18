@@ -6,7 +6,6 @@
 	<!--#include file="inc/header.inc" -->
     <div class="container">
     	<div class="row">
-    		<div id="ContentPane" class="col" runat="server"></div>
     	</div>
     </div>
     <!--#include file="inc/footer.inc" -->

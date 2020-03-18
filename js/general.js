@@ -8,14 +8,20 @@ $(document).ready(function() {
 
 
   // Bootstrap Multi-level Toggle
-  $('#navbarNav .dropdown-toggle').on("click", function(e){
-    $(this).next('ul').toggle();
-    $(this).toggleClass('dropdown-toggle--open');
+  $("#navbarNav .dropdown-toggle").on("click", function(e) {
+    var el = $(this);
+    var parent = el.closest(".nav-item");
+    el.next("ul").slideToggle();
+    el.toggleClass("dropdown-toggle--open");
+    parent
+      .siblings()
+      .find(".dropdown-toggle")
+      .removeClass("dropdown-toggle--open")
+      .next("ul")
+      .slideUp();
     e.stopPropagation();
     e.preventDefault();
   });
-
-  $('#navbarNav .nav-item.dropdown').mouseenter(navbarShow).mouseleave(navbarHide);
 
 });
 
@@ -24,15 +30,6 @@ $(document).ready(function() {
 $(window).resize(function(){
 
 });
-
-function navbarShow(){
-  $('.dropdown-toggle', this).next('ul').first().toggle();
-  $('.dropdown-toggle', this).toggleClass('dropdown-toggle--open');
-}
-function navbarHide(){
-  $('.dropdown-toggle', this).next('ul').first().toggle();
-  $('.dropdown-toggle', this).toggleClass('dropdown-toggle--open');
-}
 
 
 // On Page Ready

@@ -10345,14 +10345,14 @@ Site Navigation
   margin-top: 0px;
 }
 
-/* Hover Open Dropdowns on Desktop
----------------------------------------------*/
-.nav-item.has-child:hover .dropdown-menu {
-  visibility: visible;
-  display: block;
-}
+@media (min-width: 992px) {
+  /* Hover Open Dropdowns on Desktop
+  ---------------------------------------------*/
+  .nav-item.dropdown:hover > .dropdown-menu {
+    visibility: visible;
+    display: block;
+  }
 
-@media (min-width: 768px) {
   /* Position Last Dropdown Right
   ---------------------------------------------*/
   .navbar .navbar-nav .nav-item:nth-last-child(1) .dropdown-menu,

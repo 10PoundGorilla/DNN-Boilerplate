@@ -48,16 +48,16 @@ Site Navigation
 	}
 } 
 
+@include media-breakpoint-up(lg) {
+
 /* Hover Open Dropdowns on Desktop
 ---------------------------------------------*/	
-	.nav-item.has-child:hover{
-		.dropdown-menu{
+	.nav-item.dropdown:hover{
+		> .dropdown-menu{
 			visibility: visible;
 			display: block;
 		}
 	}
-
-@include media-breakpoint-up(md) {
 
 /* Position Last Dropdown Right
 ---------------------------------------------*/
