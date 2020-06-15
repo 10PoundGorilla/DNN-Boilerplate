@@ -61,6 +61,8 @@ b {
 ---------------------------------------------*/
 body, p, .p {
   color: $body-color;
+  height: 100%;
+  Width: 100%; 
 
   &:not(:last-child) {
     margin-bottom: 20px;
