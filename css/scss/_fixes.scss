@@ -11,6 +11,16 @@ body{
   height: 100vh;
 }
 
+/* 
+	Prevent content overflow when
+	logged into DNN as admin with personabar
+*/
+.personabar-visible{
+	margin-left: 80px;
+	width: calc(100% - 80px);
+}
+
+
 /*
 	Keep popup dialog from flowing
 	under the persona bar.

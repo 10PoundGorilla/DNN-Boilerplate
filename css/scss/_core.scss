@@ -36,7 +36,6 @@ CORE SKIN STYLES
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: $font-1;
   color: $body-color;
 
   &:not(:last-child) {
@@ -92,6 +91,7 @@ img { max-width: 100%; }
 ---------------------------------------------*/
 a {
   -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   text-decoration: none;
 

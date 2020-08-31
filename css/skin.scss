@@ -1,5 +1,9 @@
-/* Add Boostrap*/
+/* Add Variables */
+@import "scss/variables.scss";
+
+/* Add Boostrap */
 @import "bootstrap/bootstrap.scss";
+
 /* Add Custom Styles */
 @import "scss/media-queries.scss";
 @import "scss/helpers.scss";
