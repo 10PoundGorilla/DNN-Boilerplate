@@ -19,7 +19,6 @@ $SkinPath: "/portals/_default/Skins/[PLACE SKIN NAME HERE]/";
   $secondary--lightest: #E0D8BF;
 
   $gray-100:            #F6F6F6;
-  $gray-100--light:     #FDFDFD;
   $gray-200:            #EBEBEB;
   $gray-300:            #DADADA;
   $gray-400:            #8F9DA9;
@@ -30,10 +29,58 @@ $SkinPath: "/portals/_default/Skins/[PLACE SKIN NAME HERE]/";
 
 /* Text Colors
 ---------------------------------------------*/
+  .text-color-primary               { color: $primary !important; }
+  .text-color-primary--light        { color: $primary--light !important; }
+  .text-color-primary--lightest     { color: $primary--lightest !important; }
+  .text-color-primary--dark         { color: $primary--darkest !important; }
+
+  .text-color-secondary             { color: $secondary !important; }
+  .text-color-secondary--light      { color: $secondary--light !important; }
+  .text-color-secondary--lightest   { color: $secondary--lightest !important; }
+
+  .text-color-gray--100             { color: $gray-100; }
+  .text-color-gray--200             { color: $gray-200; }
+  .text-color-gray--300             { color: $gray-300; }
+  .text-color-gray--400             { color: $gray-400; }
+  .text-color-gray--500             { color: $gray-500; }
+  .text-color-gray--600             { color: $gray-600; }
+  .text-color-gray--700             { color: $gray-700; }
 
 
 /* Background Colors
 ---------------------------------------------*/
+  .bg-color-primary                 { background-color: $primary; }
+  .bg-color-primary--light          { background-color: $primary--light; }
+  .bg-color-primary--lightest       { background-color: $primary--lightest; }
+
+  .bg-color-secondary               { background-color: $secondary; }
+  .bg-color-secondary--light        { background-color: $secondary--light; }
+
+  .bg-color-gray--100               { background-color: $gray-100; }
+  .bg-color-gray--200               { background-color: $gray-200; }
+  .bg-color-gray--300               { background-color: $gray-300; }
+  .bg-color-gray--400               { background-color: $gray-400; }
+  .bg-color-gray--500               { background-color: $gray-500; }
+  .bg-color-gray--600               { background-color: $gray-600; }
+  .bg-color-gray--700               { background-color: $gray-700; }
+
+
+/* Border Colors
+---------------------------------------------*/  
+  .border-color-primary             { border-color: $primary !important; }
+  .border-color-primary--light      { border-color: $primary--light !important; }
+  .border-color-primary--lightest   { border-color: $primary--lightest !important; }
+
+  .border-color-secondary           { border-color: $secondary !important; }
+  .border-color-secondary--light    { border-color: $secondary--light !important; }
+
+  .border-color-gray--100           { border-color: $gray-100 !important; }
+  .border-color-gray--200           { border-color: $gray-200 !important; }
+  .border-color-gray--300           { border-color: $gray-300 !important; }
+  .border-color-gray--400           { border-color: $gray-400 !important; }
+  .border-color-gray--500           { border-color: $gray-500 !important; }
+  .border-color-gray--600           { border-color: $gray-600 !important; }
+  .border-color-gray--700           { border-color: $gray-700 !important; }
 
 
 /* Font Family

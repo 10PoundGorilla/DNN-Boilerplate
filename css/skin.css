@@ -7,8 +7,162 @@ CORE SKIN STYLES
 ---------------------------------------------*/
 /* Text Colors
 ---------------------------------------------*/
+.text-color-primary {
+  color: #005488 !important;
+}
+
+.text-color-primary--light {
+  color: #345A7A !important;
+}
+
+.text-color-primary--lightest {
+  color: #A3CBF3 !important;
+}
+
+.text-color-primary--dark {
+  color: #122A3A !important;
+}
+
+.text-color-secondary {
+  color: #7E715A !important;
+}
+
+.text-color-secondary--light {
+  color: #BAAB91 !important;
+}
+
+.text-color-secondary--lightest {
+  color: #E0D8BF !important;
+}
+
+.text-color-gray--100 {
+  color: #F6F6F6;
+}
+
+.text-color-gray--200 {
+  color: #EBEBEB;
+}
+
+.text-color-gray--300 {
+  color: #DADADA;
+}
+
+.text-color-gray--400 {
+  color: #8F9DA9;
+}
+
+.text-color-gray--500 {
+  color: #869BB0;
+}
+
+.text-color-gray--600 {
+  color: #939598;
+}
+
+.text-color-gray--700 {
+  color: #656D77;
+}
+
 /* Background Colors
 ---------------------------------------------*/
+.bg-color-primary {
+  background-color: #005488;
+}
+
+.bg-color-primary--light {
+  background-color: #345A7A;
+}
+
+.bg-color-primary--lightest {
+  background-color: #A3CBF3;
+}
+
+.bg-color-secondary {
+  background-color: #7E715A;
+}
+
+.bg-color-secondary--light {
+  background-color: #BAAB91;
+}
+
+.bg-color-gray--100 {
+  background-color: #F6F6F6;
+}
+
+.bg-color-gray--200 {
+  background-color: #EBEBEB;
+}
+
+.bg-color-gray--300 {
+  background-color: #DADADA;
+}
+
+.bg-color-gray--400 {
+  background-color: #8F9DA9;
+}
+
+.bg-color-gray--500 {
+  background-color: #869BB0;
+}
+
+.bg-color-gray--600 {
+  background-color: #939598;
+}
+
+.bg-color-gray--700 {
+  background-color: #656D77;
+}
+
+/* Border Colors
+---------------------------------------------*/
+.border-color-primary {
+  border-color: #005488 !important;
+}
+
+.border-color-primary--light {
+  border-color: #345A7A !important;
+}
+
+.border-color-primary--lightest {
+  border-color: #A3CBF3 !important;
+}
+
+.border-color-secondary {
+  border-color: #7E715A !important;
+}
+
+.border-color-secondary--light {
+  border-color: #BAAB91 !important;
+}
+
+.border-color-gray--100 {
+  border-color: #F6F6F6 !important;
+}
+
+.border-color-gray--200 {
+  border-color: #EBEBEB !important;
+}
+
+.border-color-gray--300 {
+  border-color: #DADADA !important;
+}
+
+.border-color-gray--400 {
+  border-color: #8F9DA9 !important;
+}
+
+.border-color-gray--500 {
+  border-color: #869BB0 !important;
+}
+
+.border-color-gray--600 {
+  border-color: #939598 !important;
+}
+
+.border-color-gray--700 {
+  border-color: #656D77 !important;
+}
+
 /* Font Family
 ---------------------------------------------*/
 /* Bootstrap Updates
@@ -9911,8 +10065,28 @@ h3 {
   }
 }
 /* Add Custom Styles */
+/**/
+/*  MEDIA QUERIES*/
+/*––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* A map of breakpoints.*/
+/**/
+/*  RESPOND ABOVE*/
+/*––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* @include respond-above(sm) {}*/
+/**/
+/*  RESPOND BELOW*/
+/*––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* @include respond-below(sm) {}*/
+/**/
+/*  RESPOND BETWEEN*/
+/*––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* @include respond-between(sm, md) {}*/
 /*---------------------------------------------
 Helpers
+---------------------------------------------*/
+/* Background Color Opacity Helper
+---------------------------------------------*/
+/* Truncate Text
 ---------------------------------------------*/
 /* Allow Text Wrap
 ---------------------------------------------*/
@@ -9936,6 +10110,8 @@ Helpers
   overflow: hidden;
 }
 
+/* Background Color Opacity Helper
+---------------------------------------------*/
 /* Margin Spacings
 ---------------------------------------------*/
 .m-t-0 {
@@ -10201,96 +10377,88 @@ CORE SKIN STYLES
 ---------------------------------------------*/
 /* Text Styles
 ---------------------------------------------*/
-@media (min-width: 992px) {
-  body {
-    font-size: 16px;
-  }
-
-  h1, .h1, .fs-1 {
-    font-size: 72px;
-  }
-
-  h2, .h2, .fs-2 {
-    font-size: 48px;
-  }
-
-  h3, .h3, .fs-3 {
-    font-size: 36px;
-  }
-
-  h4, .h4, .fs-4 {
-    font-size: 24px;
-  }
-
-  h5, .h5, .fs-5 {
-    font-size: 18px;
-  }
-
-  h6, .h6, .fs-6 {
-    font-size: 16px;
-  }
-
-  p, .p, .fs-p {
-    font-size: 16px;
-  }
-
-  .sp, .fs-xsp {
-    font-size: 14px;
-  }
-
-  .xsp, .fs-xsp {
-    font-size: 12px;
-  }
-
-  .fs-0 {
-    font-size: 0px;
-  }
+body {
+  font-size: 16px;
 }
-@media (max-width: 991px) {
-  body {
-    font-size: 16px;
-  }
 
-  h1, .h1, .fs-1 {
-    font-size: 32px;
-  }
-
-  h2, .h2, .fs-2 {
-    font-size: 28px;
-  }
-
-  h3, .h3, .fs-3 {
-    font-size: 23px;
-  }
-
-  h4, .h4, .fs-4 {
-    font-size: 20px;
-  }
-
-  h5, .h5, .fs-5 {
-    font-size: 18px;
-  }
-
-  h6, .h6, .fs-6 {
-    font-size: 16px;
-  }
-
-  p, .p, .fs-p {
-    font-size: 16px;
-  }
-
-  .sp, .fs-sp {
-    font-size: 14px;
-  }
-
-  .xsp, .fs-xsp {
-    font-size: 12px;
-  }
-
-  .fs-0 {
-    font-size: 0px;
-  }
+h1, .h1 {
+  font-size: 45px;
 }
+
+h2, .h2 {
+  font-size: 42px;
+}
+
+h3, .h3 {
+  font-size: 38px;
+}
+
+h4, .h4 {
+  font-size: 32px;
+}
+
+h5, .h5 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 16px;
+}
+
+/* Mixins for consistent use of font sizes
+---------------------------------------------*/
+/* CSS modifiers that override default style
+---------------------------------------------*/
+.fs-45 {
+  font-size: 45px !important;
+}
+
+.fs-42 {
+  font-size: 42px !important;
+}
+
+.fs-38 {
+  font-size: 38px !important;
+}
+
+.fs-32 {
+  font-size: 32px !important;
+}
+
+.fs-26 {
+  font-size: 26px !important;
+}
+
+.fs-22 {
+  font-size: 22px !important;
+}
+
+.fs-20 {
+  font-size: 20px !important;
+}
+
+.fs-18 {
+  font-size: 18px !important;
+}
+
+.fs-16, .fs-p {
+  font-size: 16px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-0 {
+  font-size: 16px !important;
+}
+
+/* Heading Styles
+---------------------------------------------*/
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #939598;
@@ -10307,6 +10475,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 /* Font Weight
 ---------------------------------------------*/
 strong,
+.strong,
 b {
   font-weight: 600;
 }
@@ -10315,8 +10484,6 @@ b {
 ---------------------------------------------*/
 body, p, .p {
   color: #939598;
-  height: 100%;
-  Width: 100%;
 }
 body:not(:last-child), p:not(:last-child), .p:not(:last-child) {
   margin-bottom: 20px;
@@ -10369,7 +10536,7 @@ a:hover, a:focus {
 ---------------------------------------------*/
 blockquote,
 .blockquote {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.45;
   color: #A3CBF3;
   font-style: normal;
@@ -10402,40 +10569,68 @@ blockquote cite:before,
     width: 100%;
   }
 }
+/* Flex Helpers
+---------------------------------------------*/
+.display--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* Center items vertically */
+.align-items--center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* Center items horizontally */
+.justify-content--center {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  -webkit-justify-content: center !important;
+  justify-content: center !important;
+}
+
+/* Right align items */
+.justify-content--end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: end;
+  justify-content: end;
+}
+
+/* Left align items */
+.justify-content--start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/* Equal height columns */
+/* Uneven flex columns */
 /*---------------------------------------------
 DNN Fixes
 ---------------------------------------------*/
-/*
-	Insure module popup dialogs display 
-	in the center without overflow.
-*/
-body {
-  height: 100vh;
-}
-
-/* 
-	Prevent content overflow when
-	logged into DNN as admin with personabar
-*/
-.personabar-visible {
-  margin-left: 80px;
-  width: calc(100% - 80px);
-}
-
-/*
-	Keep popup dialog from flowing
-	under the persona bar.
-*/
-@media (max-width: 1100px) {
-  .ui-dialog.dnnFormPopup {
-    width: calc(100% - 190px) !important;
-    left: 110px !important;
-    margin-left: 0px !important;
-  }
-}
 /*---------------------------------------------
 Site Navigation
 ---------------------------------------------*/
+/* General styles
+---------------------------------------------*/
+.navbar {
+  width: 100%;
+}
+
 /* Dropdown Arrow Styles
 ---------------------------------------------*/
 #primaryNav .nav-item.dropdown {
@@ -10453,7 +10648,6 @@ Site Navigation
 #primaryNav .nav-item.dropdown .dropdown-toggle:after {
   margin-top: 18px;
   -webkit-transition: all 250ms ease-out;
-  -moz-transition: all 250ms ease-out;
   -o-transition: all 250ms ease-out;
   transition: all 250ms ease-out;
 }
@@ -10468,26 +10662,26 @@ Site Navigation
   margin-top: 0px;
 }
 
-@media (min-width: 992px) {
-  /* Hover Open Dropdowns on Desktop
-  ---------------------------------------------*/
-  .nav-item.dropdown:hover > .dropdown-menu {
-    visibility: visible;
-    display: block;
-  }
-
-  /* Position Last Dropdown Right
-  ---------------------------------------------*/
-  .navbar .navbar-nav .nav-item:nth-last-child(1) .dropdown-menu,
-.navbar .navbar-nav .nav-item:nth-last-child(2) .dropdown-menu {
-    left: initial;
-    right: -1px;
-  }
+/* Hover Open Dropdowns on Desktop
+---------------------------------------------*/
+.nav-item.dropdown:hover > .dropdown-menu {
+  visibility: visible;
+  display: block;
 }
+
+/* Position Last Dropdown Right
+---------------------------------------------*/
+.navbar .navbar-nav .nav-item:nth-last-child(1) .dropdown-menu,
+.navbar .navbar-nav .nav-item:nth-last-child(2) .dropdown-menu {
+  left: initial;
+  right: -1px;
+}
+
 /* DNN Boostrap Menu Conflict Fixes
 ---------------------------------------------*/
 .navbar-nav {
   margin-left: 0px;
+  /* Fix default.css ul conflict*/
 }
 
 /* Mobile Adjustments - Optional
@@ -10502,6 +10696,7 @@ Site Navigation
   }
   #navbarNav .navbar-nav .nav-item.dropdown {
     padding-right: 0px;
+    /* Clear from above*/
   }
   #navbarNav .navbar-nav .nav-item.dropdown .dropdown-menu {
     padding: 0px;
@@ -10522,6 +10717,10 @@ Site Navigation
 ---------------------------------------------*/
 /* Close Icon - Simple option
 ---------------------------------------------*/
+.navbar-toggler {
+  border: 0px;
+}
+
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
   background-size: 75% 75%;
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjJweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjIgMjMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYyICg5MTM5MCkgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+Q29tYmluZWQgU2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsLW9wYWNpdHk9IjAuNSI+CiAgICAgICAgPHBhdGggZD0iTTEuMTAwNTA1MDYsMC42NzU2MjQ4NDUgTDExLjE3NzM3OTQsMTAuNzUyMTc4MiBMMjAuNjYyOTIyNywxLjI2NjIwMTAyIEMyMC44NTgxODQ4LDEuMDcwOTM4ODcgMjEuMTc0NzY3MywxLjA3MDkzODg3IDIxLjM3MDAyOTUsMS4yNjYyMDEwMiBDMjEuNTY1MjkxNiwxLjQ2MTQ2MzE2IDIxLjU2NTI5MTYsMS43NzgwNDU2NSAyMS4zNzAwMjk1LDEuOTczMzA3OCBMMTEuODg0Mzc5NCwxMS40NTkxNzgyIEwyMS42MDY2MDE3LDIxLjE4MTcyMTUgQzIxLjgwMTg2MzksMjEuMzc2OTgzNiAyMS44MDE4NjM5LDIxLjY5MzU2NjEgMjEuNjA2NjAxNywyMS44ODg4MjgzIEMyMS40MTEzMzk2LDIyLjA4NDA5MDQgMjEuMDk0NzU3MSwyMi4wODQwOTA0IDIwLjg5OTQ5NDksMjEuODg4ODI4MyBMMTEuMTc3Mzc5NCwxMi4xNjYxNzgyIEwwLjg2MzkzMjc5OCwyMi40Nzk0MDQ1IEMwLjY2ODY3MDY1MiwyMi42NzQ2NjY2IDAuMzUyMDg4MTYyLDIyLjY3NDY2NjYgMC4xNTY4MjYwMTcsMjIuNDc5NDA0NSBDLTAuMDM4NDM2MTI5MywyMi4yODQxNDIzIC0wLjAzODQzNjEyOTMsMjEuOTY3NTU5OCAwLjE1NjgyNjAxNywyMS43NzIyOTc3IEwxMC40NzAzNzk0LDExLjQ1OTE3ODIgTDAuMzkzMzk4MjgyLDEuMzgyNzMxNjMgQzAuMTk4MTM2MTM2LDEuMTg3NDY5NDggMC4xOTgxMzYxMzYsMC44NzA4ODY5OTEgMC4zOTMzOTgyODIsMC42NzU2MjQ4NDUgQzAuNTg4NjYwNDI4LDAuNDgwMzYyNjk5IDAuOTA1MjQyOTE4LDAuNDgwMzYyNjk5IDEuMTAwNTA1MDYsMC42NzU2MjQ4NDUgWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjMDAwMDAwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==");
@@ -10535,11 +10734,9 @@ Site Navigation
   height: 30px;
   position: relative;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
@@ -10552,11 +10749,9 @@ Site Navigation
   background: #005488;
   opacity: 1;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
@@ -10579,14 +10774,12 @@ Site Navigation
 }
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(1), .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(6) {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(2), .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(5) {
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(1) {
@@ -10627,6 +10820,10 @@ DNN Form Styles
   border-top: 1px solid #DADADA;
   border-bottom: 1px solid #DADADA;
   padding: 30px 0;
+  /* If the breakpoint exists in the map.*/
+  /* Get the breakpoint value.*/
+  /* Write the media query.*/
+  /* If the breakpoint doesn't exist in the map.*/
 }
 @media (max-width: 991px) {
   .branding-guidelines {
@@ -10634,12 +10831,12 @@ DNN Form Styles
   }
 }
 .branding-guidelines .section-heading {
+  font-size: 26px;
   cursor: pointer;
   margin: 0;
   padding: 15px 18px;
   font-weight: 600;
   position: relative;
-  font-size: 26px;
 }
 .branding-guidelines .section-heading:before {
   content: "";
@@ -10708,7 +10905,7 @@ DNN Form Styles
   font-size: 80%;
 }
 .branding-guidelines .style-summary {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   margin-bottom: 0;
 }
@@ -10756,11 +10953,11 @@ DNN Form Styles
 }
 .branding-guidelines .type-heading,
 .branding-guidelines .button-heading {
+  font-size: 20px;
   margin: 0;
   font-weight: 400;
   color: #A3CBF3;
   padding-bottom: 0;
-  font-size: 20px;
 }
 .branding-guidelines .button-heading {
   margin-bottom: 10px;
@@ -10772,6 +10969,10 @@ DNN Form Styles
 }
 .branding-guidelines .buttons {
   padding-bottom: 20px;
+  /* If the breakpoint exists in the map.*/
+  /* Get the breakpoint value.*/
+  /* Write the media query.*/
+  /* If the breakpoint doesn't exist in the map.*/
 }
 @media (max-width: 991px) {
   .branding-guidelines .buttons {
@@ -10781,12 +10982,22 @@ DNN Form Styles
 .branding-guidelines .buttons p {
   display: inline-block;
   margin: 0 15px 0 0;
+  /* If the breakpoint exists in the map.*/
+  /* Get the breakpoint value.*/
+  /* Write the media query.*/
+  /* If the breakpoint doesn't exist in the map.*/
 }
 @media (max-width: 991px) {
   .branding-guidelines .buttons p {
     display: block;
     margin: 0 0 15px 0;
   }
+}
+.branding-guidelines .buttons .btn {
+  /* If the breakpoint exists in the map.*/
+  /* Get the breakpoint value.*/
+  /* Write the media query.*/
+  /* If the breakpoint doesn't exist in the map.*/
 }
 @media (max-width: 991px) {
   .branding-guidelines .buttons .btn {
@@ -10800,6 +11011,10 @@ DNN Form Styles
 .branding-guidelines .blockquote,
 .branding-guidelines blockquote {
   margin-top: 10px;
+  /* If the breakpoint exists in the map.*/
+  /* Get the breakpoint value.*/
+  /* Write the media query.*/
+  /* If the breakpoint doesn't exist in the map.*/
 }
 @media (min-width: 1200px) {
   .branding-guidelines .blockquote,

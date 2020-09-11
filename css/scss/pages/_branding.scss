@@ -8,12 +8,12 @@
     }
 
     .section-heading {
+        @include fs-26;
         cursor: pointer;
         margin: 0;
         padding: 15px 18px;
         font-weight: 600;
         position: relative;
-        font-size: 26px;
 
         &:before {
             content: "";
@@ -94,7 +94,7 @@
     }
 
     .style-summary {
-        font-size: 13px;
+        @include fs-14;
         line-height: 18px;
         margin-bottom: 0;
     }
@@ -148,11 +148,11 @@
 
     .type-heading,
     .button-heading {
+        @include fs-20;
         margin: 0;
         font-weight: 400;
         color: $info;
         padding-bottom: 0;
-        font-size: 20px;
     }
 
 
