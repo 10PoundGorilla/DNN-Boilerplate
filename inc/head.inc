@@ -30,12 +30,13 @@
 <dnn:DnnJsInclude runat="server" FilePath="js/general.js" PathNameAlias="SkinPath"/>
 
 <%
-	string pageName = PortalSettings.ActiveTab.TabName;
-	int pageId = PortalSettings.ActiveTab.TabID;
-	string logged = (Request.IsAuthenticated) ? "logged-in" : "logged-out";
-	string admin = (UserController.GetCurrentUserInfo().IsInRole("Administrators")) ? "admin" : "";
-	string host = (UserController.GetCurrentUserInfo().IsInRole("Host")) ? "host" : "";
-	string bc = "bc-" + PortalSettings.ActiveTab.BreadCrumbs.Cast<DotNetNuke.Entities.Tabs.TabInfo>().First().TabID;
-	string username = UserController.GetCurrentUserInfo().DisplayName;
-	int userId = UserController.GetCurrentUserInfo().UserID;
+	int userId 			= UserController.GetCurrentUserInfo().UserID;
+	int pageId 			= PortalSettings.ActiveTab.TabID;
+	
+	string logged 		= (Request.IsAuthenticated) ? "logged-in" : "logged-out";
+	string admin 		= (UserController.GetCurrentUserInfo().IsInRole("Administrators")) ? "admin" : "";
+	string host 		= (UserController.GetCurrentUserInfo().IsInRole("Host")) ? "host" : "";
+	string bc 			= "bc-" + PortalSettings.ActiveTab.BreadCrumbs.Cast<DotNetNuke.Entities.Tabs.TabInfo>().First().TabID;
+	string username 	= UserController.GetCurrentUserInfo().DisplayName;
+	string pageName 	= PortalSettings.ActiveTab.TabName;
 %>
