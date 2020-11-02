@@ -13,7 +13,7 @@
 		</div>
 
 
-		<div class="row / m-t-30">
+		<div class="row / m-t-30" style="display:none;">
 			<div class="col-md-4">
 
 				<div class="card">

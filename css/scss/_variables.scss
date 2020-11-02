@@ -89,7 +89,7 @@ $SkinPath: "/portals/_default/Skins/[PLACE SKIN NAME HERE]/";
 
 /* Bootstrap Updates
 ---------------------------------------------*/
-
+ 
   /* Font family*/
 
   /* Colors     */
@@ -100,6 +100,9 @@ $SkinPath: "/portals/_default/Skins/[PLACE SKIN NAME HERE]/";
   $body-color:              $gray-600;
 
   $border-radius:           0px;
+  $border-radius-lg:        0px;
+  $border-radius-sm:        0px;
+  
   $input-btn-padding-y:     0.3rem;
   $input-btn-padding-x:     0.8rem;
   $input-btn-padding-y-sm:  0.3rem;

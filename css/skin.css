@@ -678,7 +678,7 @@ kbd {
   font-size: 87.5%;
   color: #ffffff;
   background-color: #212529;
-  border-radius: 0.2rem;
+  border-radius: 0px;
 }
 kbd kbd {
   padding: 0;
@@ -2231,7 +2231,7 @@ select.form-control:focus::-ms-value {
   padding: 0.3rem 0.8rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  border-radius: 0px;
 }
 
 .form-control-lg {
@@ -2239,7 +2239,7 @@ select.form-control:focus::-ms-value {
   padding: 0.3rem 0.8rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0px;
 }
 
 select.form-control[size], select.form-control[multiple] {
@@ -3046,14 +3046,14 @@ fieldset:disabled a.btn {
   padding: 0.3rem 0.8rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0px;
 }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.3rem 0.8rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  border-radius: 0px;
 }
 
 .btn-block {
@@ -3563,7 +3563,7 @@ input[type=button].btn-block {
   padding: 0.3rem 0.8rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0px;
 }
 
 .input-group-sm > .form-control:not(textarea),
@@ -3580,7 +3580,7 @@ input[type=button].btn-block {
   padding: 0.3rem 0.8rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  border-radius: 0px;
 }
 
 .input-group-lg > .custom-select,
@@ -4755,12 +4755,12 @@ input[type=button].btn-block {
   line-height: 1.5;
 }
 .pagination-lg .page-item:first-child .page-link {
-  border-top-left-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .pagination-lg .page-item:last-child .page-link {
-  border-top-right-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .pagination-sm .page-link {
@@ -4769,12 +4769,12 @@ input[type=button].btn-block {
   line-height: 1.5;
 }
 .pagination-sm .page-item:first-child .page-link {
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .pagination-sm .page-item:last-child .page-link {
-  border-top-right-radius: 0.2rem;
-  border-bottom-right-radius: 0.2rem;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .badge {
@@ -4921,7 +4921,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #EBEBEB;
-  border-radius: 0.3rem;
+  border-radius: 0px;
 }
 @media (min-width: 576px) {
   .jumbotron {
@@ -5573,7 +5573,7 @@ a.close.disabled {
   background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
+  border-radius: 0px;
   outline: 0;
 }
 
@@ -5599,8 +5599,8 @@ a.close.disabled {
   justify-content: space-between;
   padding: 1rem 1rem;
   border-bottom: 1px solid #DADADA;
-  border-top-left-radius: calc(0.3rem - 1px);
-  border-top-right-radius: calc(0.3rem - 1px);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .modal-header .close {
   padding: 1rem 1rem;
@@ -5625,8 +5625,8 @@ a.close.disabled {
   justify-content: flex-end;
   padding: 0.75rem;
   border-top: 1px solid #DADADA;
-  border-bottom-right-radius: calc(0.3rem - 1px);
-  border-bottom-left-radius: calc(0.3rem - 1px);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .modal-footer > * {
   margin: 0.25rem;
@@ -5802,14 +5802,14 @@ a.close.disabled {
   background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
+  border-radius: 0px;
 }
 .popover .arrow {
   position: absolute;
   display: block;
   width: 1rem;
   height: 0.5rem;
-  margin: 0 0.3rem;
+  margin: 0 0px;
 }
 .popover .arrow::before, .popover .arrow::after {
   position: absolute;
@@ -5843,7 +5843,7 @@ a.close.disabled {
   left: calc(-0.5rem - 1px);
   width: 0.5rem;
   height: 1rem;
-  margin: 0.3rem 0;
+  margin: 0px 0;
 }
 .bs-popover-right > .arrow::before, .bs-popover-auto[x-placement^=right] > .arrow::before {
   left: 0;
@@ -5890,7 +5890,7 @@ a.close.disabled {
   right: calc(-0.5rem - 1px);
   width: 0.5rem;
   height: 1rem;
-  margin: 0.3rem 0;
+  margin: 0px 0;
 }
 .bs-popover-left > .arrow::before, .bs-popover-auto[x-placement^=left] > .arrow::before {
   right: 0;
@@ -5909,8 +5909,8 @@ a.close.disabled {
   font-size: 1rem;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
-  border-top-left-radius: calc(0.3rem - 1px);
-  border-top-right-radius: calc(0.3rem - 1px);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .popover-header:empty {
   display: none;
@@ -6335,7 +6335,7 @@ button.bg-dark:focus {
 }
 
 .rounded-sm {
-  border-radius: 0.2rem !important;
+  border-radius: 0px !important;
 }
 
 .rounded {
@@ -6363,7 +6363,7 @@ button.bg-dark:focus {
 }
 
 .rounded-lg {
-  border-radius: 0.3rem !important;
+  border-radius: 0px !important;
 }
 
 .rounded-circle {
