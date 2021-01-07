@@ -1,17 +1,17 @@
-/*---------------------------------------------
-Site Navigation
----------------------------------------------*/
+//---------------------------------------------
+// Site Navigation
+//---------------------------------------------
 
 
-	/* General styles
-	---------------------------------------------*/
+	// General styles
+	//---------------------------------------------
 		.navbar{
 			width: 100%;
 		}
 
 
-	/* Dropdown Arrow Styles
-	---------------------------------------------*/
+	// Dropdown Arrow Styles
+	//---------------------------------------------
 		#primaryNav{
 			.nav-item{
 				&.dropdown{
@@ -54,8 +54,8 @@ Site Navigation
 		} 
 
 
-	/* Hover Open Dropdowns on Desktop
-	---------------------------------------------*/	
+	// Hover Open Dropdowns on Desktop
+	//---------------------------------------------	
 		.nav-item.dropdown:hover{
 			> .dropdown-menu{
 				visibility: visible;
@@ -64,8 +64,8 @@ Site Navigation
 		}
 
 
-	/* Position Last Dropdown Right
-	---------------------------------------------*/
+	// Position Last Dropdown Right
+	//---------------------------------------------
 		.navbar{
 			.navbar-nav{
 				.nav-item:nth-last-child(1),
@@ -79,15 +79,15 @@ Site Navigation
 		}
 
 
-	/* DNN Boostrap Menu Conflict Fixes
-	---------------------------------------------*/
+	// DNN Boostrap Menu Conflict Fixes
+	//---------------------------------------------
 		.navbar-nav{
-			margin-left:0px; /* Fix default.css ul conflict*/
+			margin-left:0px; // Fix default.css ul conflict*/
 		}
 
 
-	/* Mobile Adjustments - Optional
-	---------------------------------------------*/
+	// Mobile Adjustments - Optional
+	//---------------------------------------------
 		@include media-breakpoint-down(md) {
 			#navbarNav{
 				margin-top:15px;
@@ -98,7 +98,7 @@ Site Navigation
 						border-bottom: solid 1px $gray-500;
 
 						&.dropdown{
-							padding-right: 0px; /* Clear from above*/
+							padding-right: 0px; // Clear from above*/
 
 							.dropdown-menu{
 								padding: 0px;
@@ -127,12 +127,12 @@ Site Navigation
 		}
 
 
-	/* Mobile Adjustments - Optional
-	---------------------------------------------*/
+	// Mobile Adjustments - Optional
+	//---------------------------------------------
 
 
-		/* Close Icon - Simple option
-		---------------------------------------------*/
+		// Close Icon - Simple option
+		//---------------------------------------------
 			.navbar-toggler{
 				border: 0px;
 			}
@@ -144,8 +144,8 @@ Site Navigation
 			}
 
 
-		/* Hamburger Icon - Fancy option
-		---------------------------------------------*/
+		// Hamburger Icon - Fancy option
+		//---------------------------------------------
 			.navbar-toggler{
 				.navbar-toggler-icon {
 					background-image: initial !important;
@@ -252,16 +252,3 @@ Site Navigation
 					}
 				}
 			}
-
-
-
-
-
-
-
-
-
-
-
-
-
