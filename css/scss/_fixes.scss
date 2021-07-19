@@ -1,5 +1,15 @@
-/*---------------------------------------------
-DNN Fixes
----------------------------------------------*/
+// ------------------------------------
+// DNN Fixes 
+// ------------------------------------
 
-
+// fix "add module" dialog position
+  .dnnEditState  {
+    .dnnModuleDialog,
+    .dnnModuleManager .DnnModule.floating, 
+    .dnnModuleSorting .DnnModule.floating {
+      position: fixed!important;
+      top: 50%!important;
+      left: 50%!important;
+      transform: translate(-50%, -50%);
+    }
+  }

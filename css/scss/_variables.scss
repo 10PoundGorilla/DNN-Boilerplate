@@ -1,120 +1,85 @@
-/*---------------------------------------------
-CORE SKIN STYLES
----------------------------------------------*/
 $SkinPath: "/portals/_default/Skins/[PLACE SKIN NAME HERE]/";
 
 
-/* COLORS
----------------------------------------------*/
-  $white:               #ffffff;
+// ------------------------------------
+// Colors 
+// ------------------------------------
 
-  $primary:             #005488;
-  $primary--light:      #345A7A;
-  $primary--lightest:   #A3CBF3;
-  $primary--darker:     #2A3B49;
-  $primary--darkest:    #122A3A;
+  // define brand color variables
+  $brand-red:       #B32317; // example
 
-  $secondary:           #7E715A;
-  $secondary--light:    #BAAB91;
-  $secondary--lightest: #E0D8BF;
-
-  $gray-100:            #F6F6F6;
-  $gray-200:            #EBEBEB;
-  $gray-300:            #DADADA;
-  $gray-400:            #8F9DA9;
-  $gray-500:            #869BB0;
-  $gray-600:            #939598;
-  $gray-700:            #656D77;
+  // override Bootstrap defaults
+  // $primary:             $variable;
+  // $secondary:           $variable;
+  // $light:               $variable;
+  // $dark:                $variable;
+  // $gray-100:            $variable;
+  // $gray-200:            $variable;
+  // $gray-300:            $variable;
+  // $gray-400:            $variable;
+  // $gray-500:            $variable;
+  // $gray-600:            $variable;
+  // $gray-700:            $variable;
 
 
-/* Text Colors
----------------------------------------------*/
-  .text-color-primary               { color: $primary !important; }
-  .text-color-primary--light        { color: $primary--light !important; }
-  .text-color-primary--lightest     { color: $primary--lightest !important; }
-  .text-color-primary--dark         { color: $primary--darkest !important; }
-
-  .text-color-secondary             { color: $secondary !important; }
-  .text-color-secondary--light      { color: $secondary--light !important; }
-  .text-color-secondary--lightest   { color: $secondary--lightest !important; }
-
-  .text-color-gray--100             { color: $gray-100; }
-  .text-color-gray--200             { color: $gray-200; }
-  .text-color-gray--300             { color: $gray-300; }
-  .text-color-gray--400             { color: $gray-400; }
-  .text-color-gray--500             { color: $gray-500; }
-  .text-color-gray--600             { color: $gray-600; }
-  .text-color-gray--700             { color: $gray-700; }
+  // array for brand colors not replacing Bootstrap default
+  $brand-colors: () !default;
+  $brand-colors: map-merge(
+    (
+      "red":        $brand-red,
+    ),
+    $brand-colors
+  );
 
 
-/* Background Colors
----------------------------------------------*/
-  .bg-color-primary                 { background-color: $primary; }
-  .bg-color-primary--light          { background-color: $primary--light; }
-  .bg-color-primary--lightest       { background-color: $primary--lightest; }
+// ------------------------------------
+// Text Colors 
+// adds on to core bootstrap text colors
+// eg .text-primary, .text-light
+// ------------------------------------
 
-  .bg-color-secondary               { background-color: $secondary; }
-  .bg-color-secondary--light        { background-color: $secondary--light; }
-
-  .bg-color-gray--100               { background-color: $gray-100; }
-  .bg-color-gray--200               { background-color: $gray-200; }
-  .bg-color-gray--300               { background-color: $gray-300; }
-  .bg-color-gray--400               { background-color: $gray-400; }
-  .bg-color-gray--500               { background-color: $gray-500; }
-  .bg-color-gray--600               { background-color: $gray-600; }
-  .bg-color-gray--700               { background-color: $gray-700; }
+  @each $color, $value in $brand-colors {
+    .text-#{$color} {
+        color: $value!important;
+    }
+  }
 
 
-/* Border Colors
----------------------------------------------*/  
-  .border-color-primary             { border-color: $primary !important; }
-  .border-color-primary--light      { border-color: $primary--light !important; }
-  .border-color-primary--lightest   { border-color: $primary--lightest !important; }
-
-  .border-color-secondary           { border-color: $secondary !important; }
-  .border-color-secondary--light    { border-color: $secondary--light !important; }
-
-  .border-color-gray--100           { border-color: $gray-100 !important; }
-  .border-color-gray--200           { border-color: $gray-200 !important; }
-  .border-color-gray--300           { border-color: $gray-300 !important; }
-  .border-color-gray--400           { border-color: $gray-400 !important; }
-  .border-color-gray--500           { border-color: $gray-500 !important; }
-  .border-color-gray--600           { border-color: $gray-600 !important; }
-  .border-color-gray--700           { border-color: $gray-700 !important; }
-
-
-/* Font Family
----------------------------------------------*/
+// ------------------------------------
+// Background Colors 
+// adds on to core bootstrap bg colors
+// eg .bg-primary, .bg-success
+// ------------------------------------
   
+  @each $color, $value in $brand-colors {
+    .bg-#{$color} {
+      background-color: $value!important;
+    }
+  }
 
-/* Bootstrap Updates
----------------------------------------------*/
- 
-  /* Font family*/
 
-  /* Colors     */
-  $danger:                  #B2425D;
-  $info:                    $primary--lightest;
-  $light:                   $gray-300;
-  $dark:                    $gray-700; 
-  $body-color:              $gray-600;
-
-  $border-radius:           0px;
-  $border-radius-lg:        0px;
-  $border-radius-sm:        0px;
+// ------------------------------------
+// Border Colors 
+// adds on to core bootstrap border colors
+// eg .border-primary, .border-success
+// ------------------------------------
   
-  $input-btn-padding-y:     0.3rem;
-  $input-btn-padding-x:     0.8rem;
-  $input-btn-padding-y-sm:  0.3rem;
-  $input-btn-padding-x-sm:  0.8rem;
-  $input-btn-padding-y-lg:  0.3rem;
-  $input-btn-padding-x-lg:  0.8rem;
-  $btn-font-weight:         600;
+  @each $color, $value in $brand-colors {
+    .border-#{$color} {
+      border-color: $value !important;
+    }
+  }
 
 
-  $label-margin-bottom:     0.25rem;
-  $input-border-color:      $gray-300;
-  $input-color:             $primary;
-  $input-placeholder-color: $primary;
-  $input-padding-y:         0.6rem;
-  $input-padding-x:         0.8rem;
+// ------------------------------------
+// Bootstrap Updates 
+// overrides from bootstrap > variables.scss
+// ------------------------------------
+
+  // additional margin padding classes
+  // eg .mb-6
+  $spacers: (
+   6: ($spacer * 6.25),   // 100px
+   7: ($spacer * 7.5),    // 120px
+   8: ($spacer * 9.375)  // 150px
+ );
