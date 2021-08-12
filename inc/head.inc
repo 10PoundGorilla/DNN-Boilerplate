@@ -25,7 +25,6 @@
 
 
 <!-- Javascript -->
-<dnn:DnnJsInclude runat="server" FilePath="libraries/bootstrap/js/popper.min.js" PathNameAlias="SkinPath"/>
 <dnn:DnnJsInclude runat="server" FilePath="libraries/bootstrap/js/bootstrap.min.js" PathNameAlias="SkinPath"/>
 <dnn:DnnJsInclude runat="server" FilePath="js/general.js" PathNameAlias="SkinPath"/>
 
