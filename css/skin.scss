@@ -1,18 +1,21 @@
 // Add Boostrap functions, variables, mixins
 // Lets us override without first redefining
-@import "bootstrap/functions.scss";
-@import "bootstrap/variables.scss";
-@import "bootstrap/mixins.scss";
+
+// Configuration
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/utilities";
 
 // Add our variables & overrides
 @import "scss/variables.scss";
 
-// Add rest of Bootstrap
+// Layout & components
 @import "bootstrap/root";
 @import "bootstrap/reboot";
 @import "bootstrap/type";
 @import "bootstrap/images";
-@import "bootstrap/code";
+@import "bootstrap/containers";
 @import "bootstrap/grid";
 @import "bootstrap/tables";
 @import "bootstrap/forms";
@@ -20,18 +23,15 @@
 @import "bootstrap/transitions";
 @import "bootstrap/dropdown";
 @import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
 @import "bootstrap/nav";
 @import "bootstrap/navbar";
 @import "bootstrap/card";
+@import "bootstrap/accordion";
 @import "bootstrap/breadcrumb";
 @import "bootstrap/pagination";
 @import "bootstrap/badge";
-@import "bootstrap/jumbotron";
 @import "bootstrap/alert";
 @import "bootstrap/progress";
-@import "bootstrap/media";
 @import "bootstrap/list-group";
 @import "bootstrap/close";
 @import "bootstrap/toasts";
@@ -40,8 +40,14 @@
 @import "bootstrap/popover";
 @import "bootstrap/carousel";
 @import "bootstrap/spinners";
-@import "bootstrap/utilities";
-@import "bootstrap/print";
+@import "bootstrap/offcanvas";
+
+// Helpers
+@import "bootstrap/helpers";
+
+// Utilities
+@import "bootstrap/utilities/api";
+// scss-docs-end import-stack
 
 // Add custom styles 
 @import "scss/helpers.scss";
