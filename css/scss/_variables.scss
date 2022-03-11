@@ -1,85 +1,60 @@
-$SkinPath: "/portals/_default/Skins/[PLACE SKIN NAME HERE]/";
+// ------------------------------------
+// Colors
+// ------------------------------------
+	// define brand colors
+	$blue:				#0d6efd !default;
+
+	// override Bootstrap theme colors
+	$primary:       $blue !default;
+	// $secondary:     $gray-600 !default;
+	// $success:       $green !default;
+	// $info:          $cyan !default;
+	// $warning:       $yellow !default;
+	// $danger:        $red !default;
+	// $light:         $gray-100 !default;
+	// $dark:          $gray-900 !default;
+
+
+	// remove if extra CSS color variables are needed
+	// eg --bs-cyan, --bs-pink, --bs-gray-700
+	// reference lines 24 &  52 in Bootstrap variables file
+	$grays: ();
+	$colors: ();
 
 
 // ------------------------------------
-// Colors 
+// Typography
 // ------------------------------------
-
-  // define brand color variables
-  $brand-red:       #B32317; // example
-
-  // override Bootstrap defaults
-  // $primary:             $variable;
-  // $secondary:           $variable;
-  // $light:               $variable;
-  // $dark:                $variable;
-  // $gray-100:            $variable;
-  // $gray-200:            $variable;
-  // $gray-300:            $variable;
-  // $gray-400:            $variable;
-  // $gray-500:            $variable;
-  // $gray-600:            $variable;
-  // $gray-700:            $variable;
+	
+	// families
+	$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
 
-  // array for brand colors not replacing Bootstrap default
-  $brand-colors: () !default;
-  $brand-colors: map-merge(
-    (
-      "red":        $brand-red,
-    ),
-    $brand-colors
-  );
+	// weights
+	$font-weight-lighter:         lighter !default;
+	$font-weight-light:           300 !default;
+	$font-weight-normal:          400 !default;
+	$font-weight-bold:            700 !default;
+	$font-weight-bolder:          bolder !default;
+
+	$font-weight-base:            $font-weight-normal !default;
+	$headings-font-weight:        500 !default;
 
 
-// ------------------------------------
-// Text Colors 
-// adds on to core bootstrap text colors
-// eg .text-primary, .text-light
-// ------------------------------------
-
-  @each $color, $value in $brand-colors {
-    .text-#{$color} {
-        color: $value!important;
-    }
-  }
-
-
-// ------------------------------------
-// Background Colors 
-// adds on to core bootstrap bg colors
-// eg .bg-primary, .bg-success
-// ------------------------------------
-  
-  @each $color, $value in $brand-colors {
-    .bg-#{$color} {
-      background-color: $value!important;
-    }
-  }
+	// sizes
+	$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+	$font-size-sm:                $font-size-base * .875 !default;
+	$font-size-lg:                $font-size-base * 1.25 !default;
+	$h1-font-size:                $font-size-base * 2.5 !default;
+	$h2-font-size:                $font-size-base * 2 !default;
+	$h3-font-size:                $font-size-base * 1.75 !default;
+	$h4-font-size:                $font-size-base * 1.5 !default;
+	$h5-font-size:                $font-size-base * 1.25 !default;
+	$h6-font-size:                $font-size-base !default;
 
 
-// ------------------------------------
-// Border Colors 
-// adds on to core bootstrap border colors
-// eg .border-primary, .border-success
-// ------------------------------------
-  
-  @each $color, $value in $brand-colors {
-    .border-#{$color} {
-      border-color: $value !important;
-    }
-  }
-
-
-// ------------------------------------
-// Bootstrap Updates 
-// overrides from bootstrap > variables.scss
-// ------------------------------------
-
-  // additional margin padding classes
-  // eg .mb-6
-  $spacers: (
-   6: ($spacer * 6.25),   // 100px
-   7: ($spacer * 7.5),    // 120px
-   8: ($spacer * 9.375)  // 150px
- );
+	// line heights
+	$line-height-base:            1.5 !default;
+	$line-height-sm:              1.25 !default;
+	$line-height-lg:              2 !default;
+	$headings-line-height:        1.2 !default;

@@ -1,23 +1,13 @@
-<div class="container">
-	<div class="row">
-
-		<nav class="navbar navbar-light navbar-expand-lg">
-
-			<dnn:LOGO runat="server" class="navbar-brand" />
-
-			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</span>
-			</button>
-
-			<dnn:MENU MenuStyle="menus/main" runat="server" NodeSelector="*"></dnn:MENU>
-		</nav>
-		
+<header>
+	<div class="container">
+		<div class="row">
+			<nav class="navbar navbar-expand-lg">
+				<dnn:Logo runat="server" id="dnnLogo" />
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<dnn:MENU MenuStyle="menus/main" runat="server" NodeSelector="*"></dnn:MENU>
+			</nav>
+		</div>
 	</div>
-</div>
+</header>

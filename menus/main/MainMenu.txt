@@ -1,44 +1,24 @@
-<div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-	<ul id="primaryNav" class="navbar-nav">
+<div class="collapse navbar-collapse" id="main-nav">
+	<ul class="navbar-nav">
 		[*>NODE-TOP]
 	</ul>
 </div>
 
 
-<!-- First Level Items -->
 [>NODE-TOP]
-    <li class="nav-item pageID-[=ID] [?NODE] dropdown [/?] [?SELECTED] active [/?] [?BREADCRUMB] active-child [/?]">
-    [?ENABLED]
-        <a class="nav-link" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]>
-            <span>[=TEXT]</span>
-        </a>
-    [?ELSE]
-        <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
-    [/?]
-    [?NODE]
-        <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-        <ul class="dropdown-menu">
-        [*>NODE]
-        </ul>
-    [/?]
-    </li>
+	<li class="nav-item pageID-[=ID] [?NODE] dropdown [/?] [?SELECTED] active [/?] [?BREADCRUMB] active-child [/?]">
+		[?NODE]
+			<a class="nav-link [?SELECTED] active [/?] dropdown-toggle" href="[=URL]" [?SELECTED] aria-current="page"[/?] id="page-[=ID]-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">[=TEXT]</a>
+			<ul class="dropdown-menu" aria-labelledby="page-[=ID]-link">
+			     [>NODE]   
+			</ul>
+		[?ELSE]
+			<a class="nav-link [?SELECTED] active [/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?] [?SELECTED] aria-current="page"[/?]>[=TEXT]</a>
+		[/?]
+	</li>
 [/>]
 
-<!-- Second+ Level Items -->
+
 [>NODE]
-    <li class="nav-item pageID-[=ID] [?NODE] dropdown [/?] [?SELECTED] active [/?] [?!SELECTED][?BREADCRUMB] active-child [/?][/?]">
-    [?ENABLED]
-        <a class="nav-link" href="[=URL]" [?TARGET]target="[=TARGET]"[/?]>
-            <span>[=TEXT]</span>
-        </a>
-    [?ELSE]
-        <a class="nav-link disabled" href="#"><span>[=TEXT]</span></a>
-    [/?]
-    [?NODE]
-        <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-        <ul class="dropdown-menu">
-        [*>NODE]
-        </ul>
-    [/?]
-    </li>
+	<li><a class="dropdown-item [?SELECTED] active [/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?] [?SELECTED] aria-current="page"[/?]>[=TEXT]</a></li>
 [/>]

@@ -11,21 +11,14 @@
 <%@ Register TagPrefix="dnn" TagName="Search" Src="~/Admin/Skins/search.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="User" Src="~/Admin/Skins/user.ascx" %>
 
-<!-- META -->
-<dnn:META runat="server" Name="viewport" Content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!-- Meta -->
+<dnn:META runat="server" Name="viewport" Content="width=device-width, initial-scale=1.0"/>
 
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i&display=swap" rel="stylesheet">
-
-<!-- CSS -->
-<dnn:DnnCssInclude runat="server" FilePath="css/fonts/fontawesome/css/all.min.css" PathNameAlias="SkinPath" Priority="80" />
-<dnn:DnnCssInclude runat="server" FilePath="css/fonts/glyphter/css/Glyphter.css" PathNameAlias="SkinPath" Priority="85" />
+<!-- Stylesheets -->
 <dnn:DnnCssInclude runat="server" FilePath="css/skin.css" PathNameAlias="SkinPath" Priority="90" />
 
-
-<!-- Javascript -->
-<dnn:DnnJsInclude runat="server" FilePath="libraries/bootstrap/js/bootstrap.min.js" PathNameAlias="SkinPath"/>
+<!-- JS -->
+<dnn:DnnJsInclude runat="server" FilePath="libraries/bootstrap/js/bootstrap.bundle.min.js" PathNameAlias="SkinPath"/>
 <dnn:DnnJsInclude runat="server" FilePath="js/general.js" PathNameAlias="SkinPath"/>
 
 <%

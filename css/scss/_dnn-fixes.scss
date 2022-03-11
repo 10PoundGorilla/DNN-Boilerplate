@@ -1,0 +1,21 @@
+// fix "add module" dialog position
+  .dnnEditState  {
+    .dnnModuleDialog,
+    .dnnModuleManager .DnnModule.floating, 
+    .dnnModuleSorting .DnnModule.floating {
+      position: fixed!important;
+      top: 50%!important;
+      left: 50%!important;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+// hide 2sxc quick insert link
+.sc-content-block-menu.sc-content-block-quick-insert { 
+  display: none !important;
+}
+
+// yellow <mark> around remember login checkbox
+.dnnCheckbox .mark {
+  background-color: transparent!important;
+}
