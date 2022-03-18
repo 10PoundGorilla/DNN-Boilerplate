@@ -1,0 +1,1 @@
+Rename this subdirectory to match your theme name and add custom template files here
