@@ -1,5 +1,5 @@
 <!--#include file="inc/head.inc" -->
-<div class="skin <%= logged %> <%= admin %> <%= bc %>" id="page-<%= pageId %>" data-name="<%= pageName %>">
+<div class="skin" id="page-<%= pageId %>" data-name="<%= pageName %>" data-auth="<%= logged %> <%= admin %>">
 	<!--#include file="inc/header.inc" -->
 	<main>
 		<div class="container">

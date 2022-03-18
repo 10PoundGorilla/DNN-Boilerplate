@@ -6,8 +6,7 @@
 <%@ Register TagPrefix="dnn" TagName="Logo" Src="~/Admin/Skins/logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="Menu" src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="Privacy" Src="~/Admin/Skins/privacy.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="Breadcrumb" Src="~/Admin/Skins/breadcrumb.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="Privacy" Src="~/Admin/Skins/privacy.ascx" %>            
 <%@ Register TagPrefix="dnn" TagName="Search" Src="~/Admin/Skins/search.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="User" Src="~/Admin/Skins/user.ascx" %>
 
@@ -24,11 +23,7 @@
 <%
 	int userId 			= UserController.GetCurrentUserInfo().UserID;
 	int pageId 			= PortalSettings.ActiveTab.TabID;
-	
 	string logged 		= (Request.IsAuthenticated) ? "logged-in" : "logged-out";
 	string admin 		= (UserController.GetCurrentUserInfo().IsInRole("Administrators")) ? "admin" : "";
-	string host 		= (UserController.GetCurrentUserInfo().IsInRole("Host")) ? "host" : "";
-	string bc 			= "bc-" + PortalSettings.ActiveTab.BreadCrumbs.Cast<DotNetNuke.Entities.Tabs.TabInfo>().First().TabID;
-	string username 	= UserController.GetCurrentUserInfo().DisplayName;
 	string pageName 	= PortalSettings.ActiveTab.TabName;
 %>

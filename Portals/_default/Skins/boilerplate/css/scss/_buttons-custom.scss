@@ -20,6 +20,7 @@
 
 // ------------------------------------
 // Method 2: Create only the buttons we need
+// Documentation: https://getbootstrap.com/docs/5.1/components/buttons/#mixins
 // ------------------------------------
 	.btn-primary {
 		@include button-variant(
