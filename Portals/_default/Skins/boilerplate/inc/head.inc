@@ -23,7 +23,7 @@
 <%
 	int userId 			= UserController.GetCurrentUserInfo().UserID;
 	int pageId 			= PortalSettings.ActiveTab.TabID;
-	string logged 		= (Request.IsAuthenticated) ? "logged-in" : "logged-out";
-	string admin 		= (UserController.GetCurrentUserInfo().IsInRole("Administrators")) ? "admin" : "";
+	string authenticated 		= (Request.IsAuthenticated) ? "true" : "false";
+	string admin 		= (UserController.GetCurrentUserInfo().IsInRole("Administrators")) ? "true" : "false";
 	string pageName 	= PortalSettings.ActiveTab.TabName;
 %>
