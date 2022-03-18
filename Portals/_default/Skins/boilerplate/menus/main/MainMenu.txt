@@ -1,0 +1,24 @@
+<div class="collapse navbar-collapse" id="main-nav">
+	<ul class="navbar-nav">
+		[*>NODE-TOP]
+	</ul>
+</div>
+
+
+[>NODE-TOP]
+	<li class="nav-item pageID-[=ID] [?NODE] dropdown [/?] [?SELECTED] active [/?] [?BREADCRUMB] active-child [/?]">
+		[?NODE]
+			<a class="nav-link dropdown-toggle [?SELECTED] active [/?]" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">[=TEXT]</a>
+            <ul class="dropdown-menu">
+               [*>NODE]
+             </ul>
+		[?ELSE]
+			<a class="nav-link [?SELECTED] active [/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?] [?SELECTED] aria-current="page"[/?]>[=TEXT]</a>
+		[/?]
+	</li>
+[/>]
+
+
+[>NODE]
+	<li><a class="dropdown-item [?SELECTED] active [/?]" href="[=URL]" [?TARGET]target="[=TARGET]"[/?] [?SELECTED] aria-current="page"[/?]>[=TEXT]</a></li>
+[/>]

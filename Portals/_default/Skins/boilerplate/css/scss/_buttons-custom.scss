@@ -1,0 +1,65 @@
+// ------------------------------------
+// Method 1: Use Bootstrap loops to create all default buttons
+// ------------------------------------
+
+// loop for solid buttons
+// @each $color, $value in $theme-colors {
+//   .btn-#{$color} {
+//     @include button-variant($value, $value);
+//   }
+// }
+
+// loop for outline buttons
+// @each $color, $value in $theme-colors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value);
+//   }
+// }
+
+
+
+// ------------------------------------
+// Method 2: Create only the buttons we need
+// Documentation: https://getbootstrap.com/docs/5.1/components/buttons/#mixins
+// ------------------------------------
+	.btn-primary {
+		@include button-variant(
+			$primary,
+			$primary,
+			$hover-background: darken($primary,20%),
+			$hover-border: darken($primary,20%),
+			$active-background: darken($primary,30%),
+			$active-border: darken($primary,30%),
+			);
+
+		&:visited {
+			color: color-contrast($primary);
+		}
+	}
+
+	.btn-secondary {
+		@include button-variant(
+			$secondary,
+			$secondary,
+			$hover-background: darken($secondary,20%),
+			$hover-border: darken($secondary,20%),
+			$active-background: darken($secondary,30%),
+			$active-border: darken($secondary,30%),
+			);
+
+		&:visited {
+			color: color-contrast($secondary);
+		}
+	}
+
+
+// ------------------------------------
+// Optional: Create custom buttons
+// ------------------------------------	
+	.btn-custom {
+		@include button-variant(
+			white,
+			white,
+			black,
+		);
+	}
