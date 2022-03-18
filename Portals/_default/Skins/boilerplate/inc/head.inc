@@ -17,7 +17,7 @@
 <dnn:DnnCssInclude runat="server" FilePath="css/skin.css" PathNameAlias="SkinPath" Priority="90" />
 
 <!-- JS -->
-<dnn:DnnJsInclude runat="server" FilePath="libraries/bootstrap/js/bootstrap.bundle.min.js" PathNameAlias="SkinPath"/>
+<dnn:DnnJsInclude runat="server" FilePath="js/bootstrap.bundle.min.js" PathNameAlias="SkinPath"/>
 <dnn:DnnJsInclude runat="server" FilePath="js/general.js" PathNameAlias="SkinPath"/>
 
 <%
