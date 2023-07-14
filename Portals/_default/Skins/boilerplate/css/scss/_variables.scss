@@ -28,7 +28,7 @@
 	// $indigo:				#6610f2 !default;
 	// $purple:				#6f42c1 !default;
 	// $pink:					#d63384 !default;
-	// $red:					#dc3545 !default;
+	$red:					#dc3545 !default;
 	// $orange:				#fd7e14 !default;
 	// $yellow:				#ffc107 !default;
 	// $green:					#198754 !default;
@@ -39,29 +39,29 @@
 	//		eg --bs-cyan, --bs-pink, --bs-gray-700
 	//		reference lines 24 &  52 in Bootstrap variables file
 	//--------------------------------------------------
-	$grays: ();
-	$colors: ();
+	//$grays: ();
+	//$colors: ();
 	
 	// Override Bootstrap Theme Colors
 	//		These colors are used to generate shades from 100-900
 	//		https://getbootstrap.com/docs/5.3/customize/color/#all-colors
 	//--------------------------------------------------
 	$primary:				$brand-blue !default;
-	// $secondary:				$gray-600 !default;
+	$secondary:				#6c757d !default;
 	// $success:				$green !default;
 	// $info:					$cyan !default;
 	// $warning:				$yellow !default;
-	// $danger:				$red !default;
+	$danger:				$red !default;
 	// $light:					$gray-100 !default;
 	// $dark:					$gray-900 !default;
 
 	$theme-colors: (
 	"primary":			$primary,
-	// "secondary":		$secondary,
+	"secondary":		$secondary,
 	// "success":			$success,
 	// "info":				$info,
 	// "warning":			$warning,
-	// "danger":			$danger,
+	"danger":			$danger,
 	// "light":			$light,
 	// "dark":				$dark
 	) !default;
