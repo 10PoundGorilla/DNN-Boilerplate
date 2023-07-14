@@ -1,0 +1,44 @@
+@inherits Custom.Hybrid.Razor14
+@using ToSic.Razor.Blade
+
+@*
+  This partial is designed to consistently handle the markup for buttons.
+
+  ----------------------------------------------
+  - Parameters
+  ----------------------------------------------
+  
+  style = Modifier class for the button variant to be displayed
+  data = Link entity to be used as data for the button
+  enableToolbar = Optional boolean that determines whether the toolbar should show, true by default
+
+  ----------------------------------------------
+  - Usage
+  ----------------------------------------------
+
+  @Html.Partial("partials/_button.cshtml", new { data = Content.Link, style = "btn-primary", enableToolbar = false })
+*@
+
+@{
+  string style = DynamicModel.style;
+  bool enableToolbar = (DynamicModel.EnableToolbar == false) ? false : true; // Default to true
+
+  string styleClasses = (style == "") ? "" : string.Format("btn {0}", style);
+  string url = DynamicModel.Data.URL;
+  string displayText = DynamicModel.Data.DisplayText;
+
+  var linkHelper = CreateInstance("../helpers/LinkHelper.cs");
+  var linkInfo = linkHelper.LinkInfo(DynamicModel.Data);
+  string linkTarget = linkInfo.Window;
+
+  var toolbar = (enableToolbar) ? Html.Partial("_toolbar.cshtml", new { data = DynamicModel.Data, type = "edit-or-remove", color = (style == "btn-primary") ? "var(--bs-secondary)" : "" }) : null;
+}
+
+<a
+  class="@(styleClasses)"
+  href="@(url)"
+  target="@(linkTarget)"
+  @(toolbar)
+>
+  @(displayText)
+</a>

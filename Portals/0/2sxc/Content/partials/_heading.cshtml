@@ -1,0 +1,46 @@
+@inherits Custom.Hybrid.Razor14
+@using ToSic.Razor.Blade
+
+@{
+  var data = DynamicModel.Data;
+  var presentation = data.Presentation;
+
+  var defaultHeadingSize = Text.First(data.DefaultHeadingSize, "h2");
+  var defaultHeadingLevel = Text.First(data.DefaultHeadingLevel, "h2");
+
+  string headingLevel = Text.First(presentation.HeadingLevel, defaultHeadingLevel);
+  string headingSize = Text.First(presentation.HeadingSize, defaultHeadingSize);
+
+  string heading = data.Heading;
+  string subheading = data.Subheading;
+  string bodyContent = data.BodyContent;
+  var links = data.Links;
+  string anchor = data.Anchor;
+}
+
+@if(Text.Has(heading)) {
+    <div id="@(anchor)" class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = data, type = "edit-or-remove" })>
+        <div class="col-12 text-center">
+            @Tag.Custom(headingLevel, heading).Class(headingSize)
+
+            @if (Text.Has(subheading)) {
+                @Tag.Strong(subheading)
+            }
+
+            @if (Text.Has(bodyContent)) {
+                @Html.Raw(bodyContent)
+            }
+
+            @foreach(var link in AsList(links)) {
+                @Html.Partial("_button.cshtml", new { data = link, style = Text.First(presentation.LinkStyle, "btn-primary"), enableToolbar = true })
+            }
+        </div>
+    </div>
+
+} else if (CmsContext.User.IsSiteAdmin) {
+    <div class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = data, type = "edit-only" })>
+        <div class="col-12 text-center">
+            <h2>Add a Heading Here</h2>
+        </div>
+    </div>
+}

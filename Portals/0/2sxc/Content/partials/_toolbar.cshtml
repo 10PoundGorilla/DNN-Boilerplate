@@ -1,0 +1,81 @@
+@inherits Custom.Hybrid.Razor14
+@using ToSic.Razor.Blade
+@using ToSic.Sxc.Services
+@using System.Collections.Generic
+
+@*
+  This partial is designed to consistently handle toolbars across components and automatically theme around the skin's color variables.
+
+  ----------------------------------------------
+  - Parameters
+  ----------------------------------------------
+
+  (Entity) data = 2SXC Entity the toolbar is meant to target
+  (string) type = Key value to access the desired toolbar from the toolbars dictionary
+  (string) color = Optional parameter that will force the toolbar to use the specified color for its buttons. Good to use in cases where the default toolbar color is the same as the color of the component.
+  (string) alignment = Optional parameter that will set the alignment of the toolbar. Accepts "left" or "right".
+
+  ----------------------------------------------
+  - Usage
+  ----------------------------------------------
+
+  @Html.Partial("partials/_toolbar.cshtml", new { data = Content, type = "edit-or-remove", color = "var(--bs-secondary)", alignment = "left" })
+
+  ----------------------------------------------
+  - How to add new toolbars
+  ----------------------------------------------
+
+  1. Add a new variable that contains the desired toolbar
+  2. Create a new listing in the dictionary with a unique key string and a reference to that variable as the value
+  3. Access the new toolbar with the unique key string created in step 2
+*@
+
+@{
+  var data = DynamicModel.Data;
+  string type = DynamicModel.Type;
+  string colorOverride = DynamicModel.Color;
+  string alignmentOverride = DynamicModel.Alignment;
+
+  string alignment = Text.First(alignmentOverride, "right");
+  string defaultButtonColor = Text.First(colorOverride, "var(--bs-primary)");
+  string removeButtonColor = Text.First(colorOverride, "var(--bs-danger)");
+
+  var defaultButtonUI = new {
+    color = defaultButtonColor,
+    hover = alignment
+  };
+  var removeButtonUI = new {
+    color = removeButtonColor,
+    hover = alignment
+  };
+
+  @* Default Toolbar *@
+  var defaultToolbar = Kit.Toolbar.Default(data as object, ui: defaultButtonUI);
+  
+  @* Edit Only *@
+  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit(tweak: b => b.Prefill(new { Identifier = CmsContext.View.Identifier  }));
+
+  @* Add Only *@
+  var addOnly = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).New(tweak: b => b.Prefill(new { Identifier = CmsContext.View.Identifier  }));
+
+  @* Edit or Remove *@
+  var editOrRemove = baseToolbar.Remove(tweak: b => b.Color(removeButtonColor));
+  
+  @* List Views *@
+  var listItemBase = baseToolbar.New(tweak: b => b.Prefill(new { Identifier = CmsContext.View.Identifier }));
+  var listItemDefault = listItemBase.MoveUp().MoveDown().Remove(tweak: b => b.Color(removeButtonColor));
+  var listItemNoNew = baseToolbar.MoveUp().MoveDown().Remove(tweak: b => b.Color(removeButtonColor));
+  var listItemNoRemove = listItemBase.MoveUp().MoveDown();
+
+  var toolbars = new Dictionary<string, dynamic>(){
+    {"default", defaultToolbar},
+    {"edit-only", baseToolbar},
+    {"add-only", addOnly},
+    {"edit-or-remove", editOrRemove},
+    {"list-item-default", listItemDefault},
+    {"list-item-no-new", listItemNoNew},
+    {"list-item-no-remove", listItemNoRemove}
+  };
+}
+
+@(toolbars[type])

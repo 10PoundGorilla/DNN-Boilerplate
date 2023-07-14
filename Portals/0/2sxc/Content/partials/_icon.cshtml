@@ -1,0 +1,23 @@
+@inherits Custom.Hybrid.Razor14
+
+@*
+  This partial is designed to consistently handle the markup for icons.
+
+  ----------------------------------------------
+  - Parameters
+  ----------------------------------------------
+  
+  icon = Modifier class for desired icon
+
+  ----------------------------------------------
+  - Usage
+  ----------------------------------------------
+
+  @Html.Partial("partials/_icon.cshtml", new { icon = "icon-close" })
+*@
+
+@{
+  string icon = DynamicModel.icon;
+}
+
+<span class="icon-@(icon)" aria-hidden="true" role="img"></span>
