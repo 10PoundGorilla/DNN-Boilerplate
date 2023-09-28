@@ -4,9 +4,9 @@
 @{   
     var imageSettings = Kit.Image.Settings("MyItem", width: 1200, height: 400, quality: 0.8);
 }
-<div>
+
 @Html.Partial("partials/_heading.cshtml", new { header = MyHeader, defaultHeadingLevel = "h2", defaultHeadingSize = "h2" })
-</div>
+
 
 <div class="row" @Html.Partial("partials/_toolbar.cshtml", new { data = MyItem, type = "default" })>
      @foreach (var card in MyItems) { 

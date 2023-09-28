@@ -11,7 +11,6 @@
   var headingLevel = Text.First(headerpres.String("HeadingLevel"), defaultHeadingLevel);
   var headingSize = Text.First(headerpres.String("HeadingSize"), defaultHeadingSize);
 
-
   var heading = header.String("Heading");
   var subheading = header.String("Subheading", required: false);
   var bodyContent = header.String("BodyContent", required: false);
@@ -22,7 +21,7 @@
 @if(Text.Has(heading)) {
     <div id="@(anchor)" class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = header, type = "edit-or-remove" })>
         <div class="col-12 text-center">
-            @header.Html("Heading", container: headingSize ).Class(headingLevel)
+            @header.Html("Heading", container: headingSize).Class(headingLevel)
 
             @if (Text.Has(subheading)) {
                 @Tag.Strong(subheading)
