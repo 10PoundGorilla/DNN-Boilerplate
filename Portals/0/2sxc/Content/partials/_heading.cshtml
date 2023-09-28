@@ -13,10 +13,10 @@
 
 
   var heading = header.String("Heading");
-  var subheading = MyModel.String("Subheading", required: false);
-  var bodyContent = MyModel.String("BodyContent", required: false);
+  var subheading = header.String("Subheading", required: false);
+  var bodyContent = header.String("BodyContent", required: false);
   var links = header.Get("Links", required: false);
-  var anchor = MyModel.String("Anchor", required: false);
+  var anchor = header.String("Anchor", required: false);
 }
 
 @if(Text.Has(heading)) {
