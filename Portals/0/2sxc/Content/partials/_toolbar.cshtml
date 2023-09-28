@@ -1,4 +1,4 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade
 @using ToSic.Sxc.Services
 @using System.Collections.Generic
@@ -31,10 +31,10 @@
 *@
 
 @{
-  var data = DynamicModel.Data;
-  string type = DynamicModel.Type;
-  string colorOverride = DynamicModel.Color;
-  string alignmentOverride = DynamicModel.Alignment;
+  var data = MyModel.Item("Data");
+  var type = MyModel.String("Type");
+  var colorOverride = MyModel.String("Color", required: false);;
+  var alignmentOverride = MyModel.String("Alignment", required: false);;
 
   string alignment = Text.First(alignmentOverride, "right");
   string defaultButtonColor = Text.First(colorOverride, "var(--bs-primary)");
@@ -53,16 +53,16 @@
   var defaultToolbar = Kit.Toolbar.Default(data as object, ui: defaultButtonUI);
   
   @* Edit Only *@
-  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit(tweak: b => b.Prefill(new { Identifier = CmsContext.View.Identifier  }));
+  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit(tweak: b => b.Prefill(new { Identifier = MyContext.View.Identifier  }));
 
   @* Add Only *@
-  var addOnly = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).New(tweak: b => b.Prefill(new { Identifier = CmsContext.View.Identifier  }));
+  var addOnly = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).New(tweak: b => b.Prefill(new { Identifier = MyContext.View.Identifier  }));
 
   @* Edit or Remove *@
   var editOrRemove = baseToolbar.Remove(tweak: b => b.Color(removeButtonColor));
   
   @* List Views *@
-  var listItemBase = baseToolbar.New(tweak: b => b.Prefill(new { Identifier = CmsContext.View.Identifier }));
+  var listItemBase = baseToolbar.New(tweak: b => b.Prefill(new { Identifier = MyContext.View.Identifier }));
   var listItemDefault = listItemBase.MoveUp().MoveDown().Remove(tweak: b => b.Color(removeButtonColor));
   var listItemNoNew = baseToolbar.MoveUp().MoveDown().Remove(tweak: b => b.Color(removeButtonColor));
   var listItemNoRemove = listItemBase.MoveUp().MoveDown();

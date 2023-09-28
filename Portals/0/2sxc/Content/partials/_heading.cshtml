@@ -1,27 +1,28 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade
 
 @{
-  var data = DynamicModel.Data;
-  var presentation = data.Presentation;
+  var header = MyModel.Item("Header");
+  var headerpres = header.Presentation;
 
-  var defaultHeadingSize = Text.First(data.DefaultHeadingSize, "h2");
-  var defaultHeadingLevel = Text.First(data.DefaultHeadingLevel, "h2");
+  var defaultHeadingSize = Text.First(MyModel.String("DefaultHeadingSize"), "h2");
+  var defaultHeadingLevel = Text.First(MyModel.String("DefaultHeadingLevel"), "h2");
 
-  string headingLevel = Text.First(presentation.HeadingLevel, defaultHeadingLevel);
-  string headingSize = Text.First(presentation.HeadingSize, defaultHeadingSize);
+  var headingLevel = Text.First(headerpres.String("HeadingLevel"), defaultHeadingLevel);
+  var headingSize = Text.First(headerpres.String("HeadingSize"), defaultHeadingSize);
 
-  string heading = data.Heading;
-  string subheading = data.Subheading;
-  string bodyContent = data.BodyContent;
-  var links = data.Links;
-  string anchor = data.Anchor;
+
+  var heading = header.String("Heading");
+  var subheading = MyModel.String("Subheading", required: false);
+  var bodyContent = MyModel.String("BodyContent", required: false);
+  var links = header.Get("Links", required: false);
+  var anchor = MyModel.String("Anchor", required: false);
 }
 
 @if(Text.Has(heading)) {
-    <div id="@(anchor)" class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = data, type = "edit-or-remove" })>
+    <div id="@(anchor)" class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = header, type = "edit-or-remove" })>
         <div class="col-12 text-center">
-            @Tag.Custom(headingLevel, heading).Class(headingSize)
+            @header.Html("Heading", container: headingSize ).Class(headingLevel)
 
             @if (Text.Has(subheading)) {
                 @Tag.Strong(subheading)
@@ -31,14 +32,14 @@
                 @Html.Raw(bodyContent)
             }
 
-            @foreach(var link in AsList(links)) {
-                @Html.Partial("_button.cshtml", new { data = link, style = Text.First(presentation.LinkStyle, "btn-primary"), enableToolbar = true })
+            @foreach(var link in AsItems(links)) {
+                @Html.Partial("_button.cshtml", new { btn = link, enableToolbar = true })
             }
         </div>
     </div>
 
-} else if (CmsContext.User.IsSiteAdmin) {
-    <div class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = data, type = "edit-only" })>
+} else if (MyContext.User.IsSiteAdmin) {
+    <div class="row mb-3" @Html.Partial("_toolbar.cshtml", new { data = header, type = "edit-only" })>
         <div class="col-12 text-center">
             <h2>Add a Heading Here</h2>
         </div>

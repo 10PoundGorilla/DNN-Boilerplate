@@ -1,6 +1,5 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade
-
 @*
   This partial is designed to consistently handle the markup for buttons.
 
@@ -20,25 +19,33 @@
 *@
 
 @{
-  string style = DynamicModel.style;
-  bool enableToolbar = (DynamicModel.EnableToolbar == false) ? false : true; // Default to true
+  
+  var btn = MyModel.Item("btn");
+  var style = btn.String("style", required: false);
+  bool enableToolbar = (MyModel.Bool("EnableToolbar") == false) ? false : true; // Default to true
 
   string styleClasses = (style == "") ? "" : string.Format("btn {0}", style);
-  string url = DynamicModel.Data.URL;
-  string displayText = DynamicModel.Data.DisplayText;
+
+  var displayText = btn.String("DisplayText");
+  var linkUrl = btn.Url("URL");
+  var linkTarget = btn.String("Target");
+
+@*  The above replaces this link builder code that needs to be upgraded to new Typed version.
 
   var linkHelper = CreateInstance("../helpers/LinkHelper.cs");
   var linkInfo = linkHelper.LinkInfo(DynamicModel.Data);
   string linkTarget = linkInfo.Window;
 
-  var toolbar = (enableToolbar) ? Html.Partial("_toolbar.cshtml", new { data = DynamicModel.Data, type = "edit-or-remove", color = (style == "btn-primary") ? "var(--bs-secondary)" : "" }) : null;
+*@
+  var toolbar = (enableToolbar) ? Html.Partial("_toolbar.cshtml", new { data = btn, type = "edit-or-remove", color = (style == "btn-primary") ? "var(--bs-secondary)" : "" }) : null;
 }
 
 <a
   class="@(styleClasses)"
-  href="@(url)"
+  href="@(linkUrl)"
   target="@(linkTarget)"
   @(toolbar)
 >
   @(displayText)
 </a>
+

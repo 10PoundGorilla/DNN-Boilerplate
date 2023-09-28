@@ -1,28 +1,31 @@
-@inherits Custom.Hybrid.Razor14
-@using ToSic.Razor.Blade
+@inherits Custom.Hybrid.RazorTyped
+@using ToSic.Razor.Blade;
 
-@{
-    var items = AsList(Data);
-    var imageSettings = Kit.Image.Settings("Content", width: 1200, height: 400, quality: 0.8);
+@{   
+    var imageSettings = Kit.Image.Settings("MyItem", width: 1200, height: 400, quality: 0.8);
 }
+<div>
+@Html.Partial("partials/_heading.cshtml", new { header = MyHeader, defaultHeadingLevel = "h2", defaultHeadingSize = "h2" })
+</div>
 
-@Html.Partial("partials/_heading.cshtml", new { data = Header, defaultHeadingLevel = "h2" })
-
-<div class="row" @Html.Partial("partials/_toolbar.cshtml", new { data = Content, type = "default" })>
-    @foreach(var item in AsList(items)) {
-        var altText = Text.First(item.Image.Field("Image").Metadata.Description, item.Image.AltText);
+<div class="row" @Html.Partial("partials/_toolbar.cshtml", new { data = MyItem, type = "default" })>
+     @foreach (var card in MyItems) { 
+        var altText = Text.First(card.String("Image.Image.Metadata.Description"), card.String("Image.AltText"));
 
         <div class="col-12 col-md-6 col-xl-3">
-            <div class="card" @Html.Partial("partials/_toolbar.cshtml", new { data = item, type = "list-item-default" })>
-                @Kit.Image.Img(item.Image.Field("Image"), settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
+            <div class="card" @Html.Partial("partials/_toolbar.cshtml", new { data = card, type = "list-item-default" })>
+            @* Dustin: - i have ticket in as error back says that the @card.Picture("Image.Image")
+             is not working yet or any variatio of how you migt write that. 
+
+             New way not working yet: @card.Picture("Image.Image")
+             *@
+             @Kit.Image.Img(card.Url("Image.Image"), settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
                 <div class="card-body">
-                    <h5 class="card-title">@(item.Heading)</h5>
-                    <p class="card-text">@(item.BodyContent)</p>
-                    @if (item.Link != null) {
-                        @Html.Partial("partials/_button.cshtml", new { style = "btn-primary", data = item.Link })
-                    }
+                    <h5 class="card-title">@card.String("Heading")</h5>
+                    <p class="card-text">@card.String("BodyContent")</p>
                 </div>
             </div>
         </div>
     }
 </div>
+
