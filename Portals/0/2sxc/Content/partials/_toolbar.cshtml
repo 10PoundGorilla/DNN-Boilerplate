@@ -53,7 +53,7 @@
   var defaultToolbar = Kit.Toolbar.Default(data as object, ui: defaultButtonUI);
   
   @* Edit Only *@
-  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit();
+  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit(tweak: b => b.Prefill(new { Identifier = MyView.Identifier  }));
 
   @* Add Only *@
   var addOnly = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).New(tweak: b => b.Prefill(new { Identifier = MyView.Identifier  }));
