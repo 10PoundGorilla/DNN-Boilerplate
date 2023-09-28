@@ -7,7 +7,6 @@
 
 @Html.Partial("partials/_heading.cshtml", new { header = MyHeader, defaultHeadingLevel = "h2", defaultHeadingSize = "h2" })
 
-
 <div class="row" @Html.Partial("partials/_toolbar.cshtml", new { data = MyItem, type = "default" })>
      @foreach (var card in MyItems) { 
         var altText = Text.First(card.String("Image.Image.Metadata.Description"), card.String("Image.AltText"));

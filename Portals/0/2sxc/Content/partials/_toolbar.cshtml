@@ -53,16 +53,16 @@
   var defaultToolbar = Kit.Toolbar.Default(data as object, ui: defaultButtonUI);
   
   @* Edit Only *@
-  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit(tweak: b => b.Prefill(new { Identifier = MyContext.View.Identifier  }));
+  var baseToolbar = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).Edit();
 
   @* Add Only *@
-  var addOnly = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).New(tweak: b => b.Prefill(new { Identifier = MyContext.View.Identifier  }));
+  var addOnly = Kit.Toolbar.Empty(data as object, ui: defaultButtonUI).New(tweak: b => b.Prefill(new { Identifier = MyView.Identifier  }));
 
   @* Edit or Remove *@
   var editOrRemove = baseToolbar.Remove(tweak: b => b.Color(removeButtonColor));
   
   @* List Views *@
-  var listItemBase = baseToolbar.New(tweak: b => b.Prefill(new { Identifier = MyContext.View.Identifier }));
+  var listItemBase = baseToolbar.New(tweak: b => b.Prefill(new { Identifier = MyView.Identifier }));
   var listItemDefault = listItemBase.MoveUp().MoveDown().Remove(tweak: b => b.Color(removeButtonColor));
   var listItemNoNew = baseToolbar.MoveUp().MoveDown().Remove(tweak: b => b.Color(removeButtonColor));
   var listItemNoRemove = listItemBase.MoveUp().MoveDown();
