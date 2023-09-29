@@ -13,12 +13,13 @@
 
         <div class="col-12 col-md-6 col-xl-3">
             <div class="card" @Html.Partial("partials/_toolbar.cshtml", new { data = card, type = "list-item-default" })>
-            @* Dustin: - i have ticket in as error back says that the @card.Picture("Image.Image")
+               @* Dustin: - i have ticket in as error back says that the @card.Picture("Image.Image")
              is not working yet or any variatio of how you migt write that. 
+             https://github.com/2sic/2sxc/issues/3189
 
-             New way not working yet: @card.Picture("Image.Image")
+             Another way: @Kit.Image.Img(card.Url("Image.Image"), settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
              *@
-             @Kit.Image.Img(card.Url("Image.Image"), settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
+             @card.Child("Image").Picture("Image", settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
                 <div class="card-body">
                     <h5 class="card-title">@card.String("Heading")</h5>
                     <p class="card-text">@card.String("BodyContent")</p>
