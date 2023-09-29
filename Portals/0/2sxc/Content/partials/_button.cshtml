@@ -21,7 +21,7 @@
 @{
   
   var btn = MyModel.Item("btn");
-  var style = btn.String("style", required: false);
+  var style = MyModel.String("style", required: false);
   bool enableToolbar = (MyModel.Bool("EnableToolbar") == false) ? false : true; // Default to true
 
   string styleClasses = (style == "") ? "" : string.Format("btn {0}", style);
