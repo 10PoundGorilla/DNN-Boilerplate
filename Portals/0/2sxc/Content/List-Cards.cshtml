@@ -9,8 +9,14 @@
 
 <div class="row" @Html.Partial("partials/_toolbar.cshtml", new { data = MyItem, type = "default" })>
      @foreach (var card in MyItems) { 
+        // Image Settings  
         var altText = Text.First(card.String("Image.Image.Metadata.Description"), card.String("Image.AltText"));
+        
+        // Presentation Variables  
+        var pres = card.Presentation;
+        var headingType = pres.String("HeadingSize");
 
+       // The Card 
         <div class="col-12 col-md-6 col-xl-3">
             <div class="card" @Html.Partial("partials/_toolbar.cshtml", new { data = card, type = "list-item-default" })>
                @* Dustin: - i have ticket in as error back says that the @card.Picture("Image.Image")
@@ -19,9 +25,12 @@
 
              Another way: @Kit.Image.Img(card.Url("Image.Image"), settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
              *@
+             
              @card.Child("Image").Picture("Image", settings: imageSettings, imgClass: "card-img-top", imgAlt: altText)
+
                 <div class="card-body">
-                    <h5 class="card-title">@card.String("Heading")</h5>
+                    @* Should be supply choice of heading size on card title, made adjustment *@
+                     @card.Html("Heading", container: headingType).Class("card-title")
                     <p class="card-text">@card.String("BodyContent")</p>
                 </div>
             </div>
