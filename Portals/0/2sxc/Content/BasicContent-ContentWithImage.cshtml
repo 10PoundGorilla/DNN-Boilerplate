@@ -4,18 +4,30 @@
 
 @{
     var items = AsItems(MyData);
-
     var imageSettings = Kit.Image.Settings("Content", width: 600, height: 400, quality: 0.8);
+    
 }
 
 @Html.Partial("partials/_heading.cshtml", new { header = MyHeader, defaultHeadingLevel = "h2", defaultHeadingSize = "h2" })
 
 <div class="row">
     @foreach(var item in items) {
-        var images = item.Children("Image");
-        foreach(var img in images) {
+        // Presentation Variables  
+        var pres = item.Presentation;
+        var hLvl = pres.String("HeadingLevel");
+        var hSize = pres.String("HeadingSize");
+        string headingLevel = Text.First(hLvl, "h2");
+        string headingSize = Text.First(hSize, "");
 
-          var altText = Text.First(img.String("Image.Metadata.Description"), img.String("AltText"));
+        // Link get Children Fields
+        var links = item.Children("Links");
+
+        // Image loop
+        var images = item.Children("Image");
+        
+        foreach(var img in images) {
+            var altText = Text.First(img.String("Image.Metadata.Description"), img.String("AltText"));
+
             <div class="col-12 col-md-6" @Html.Partial("partials/_toolbar.cshtml", new { data = img, type = "edit-only" })>
                 @Kit.Image.Picture(img.Field("Image"), settings: imageSettings, imgClass: "d-block w-100", imgAlt: altText)
             </div>
@@ -23,24 +35,13 @@
 
         <div class="col-12 col-md-6" @Html.Partial("partials/_toolbar.cshtml", new { data = item, type = "list-item-default" })>
             @if (Text.Has(item.String("Heading"))) {
-
-                // Presentation Variables  
-                var pres = item.Presentation;
-                var hLvl = pres.String("HeadingLevel");
-                var hSize = pres.String("HeadingSize");
-
-                string headingLevel = Text.First(hLvl, "h2");
-                string headingSize = Text.First(hSize, "");
                 @Tag.Custom(hLvl, item.String("Heading")).Class(hSize)
             }
             @if (Text.Has(item.String("Subheading", required: false))) {
                 @Tag.Strong(item.String("Subheading"))
             }
-            @if (Text.Has(item.String("BodyContent"))) {
+            @if (Text.Has(item.String("BodyContent", required: false))) {
                 @Html.Raw(item.Html("BodyContent"))
-            }
-            @{
-                var links = item.Children("Links");
             }
             @foreach(var link in links) {
                 @Html.Partial("partials/_button.cshtml", new { btn = link, style = Text.First(MyItem.Presentation.String("LinkStyle"), "btn-primary"), enableToolbar = true })
