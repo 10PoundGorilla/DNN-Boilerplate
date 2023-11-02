@@ -1,6 +1,6 @@
 # Welcome to the 10 Pound Gorilla Boilerplate
 
-This boilerplate is build utilizing Bootstrap and contains the scaffolding needed to quickly build out new themes/skins in DNN. Within this repository, we also include the scaffolding and starter code for working with modules like EasyDnnNews, and 2sxc.
+This boilerplate is built utilizing Bootstrap and contains the scaffolding needed to quickly build out new themes/skins in DNN. We also include the scaffolding and starter code for working with modules like EasyDnnNews, and 2sxc.
 
 # Scaffolding Overview
 
