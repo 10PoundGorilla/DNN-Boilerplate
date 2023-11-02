@@ -1,0 +1,36 @@
+@inherits Custom.Hybrid.Razor14
+@using ToSic.Razor.Blade
+
+@{
+    var items = AsList(Data);
+    var imageSettings = Kit.Image.Settings("Content", width: 1200, height: 400, quality: 0.8);
+}
+
+@Html.Partial("../../shared/partials/_heading.cshtml", new { data = Header, defaultHeadingLevel = "h2" })
+
+<div class="row" @Html.Partial("../../shared/partials/_toolbar.cshtml", new { data = Content, type = "default" })>
+    @foreach (var item in AsList(items))
+    {
+        var altText = Text.First(item.Image.Field("Image").Metadata.Description, item.Image.AltText);
+
+        <div class="col-12 col-md-6 col-xl-3">
+            <div class="card" @Html.Partial("../../shared/partials/_toolbar.cshtml", new
+                {
+                    data = item,
+                    type =
+            "list-item-default"
+                })>
+                @Kit.Image.Img(item.Image.Field("Image"), settings: imageSettings, imgClass: "card-img-top", imgAlt:
+                         altText)
+                <div class="card-body">
+                    <h5 class="card-title">@(item.Heading)</h5>
+                    <p class="card-text">@(item.BodyContent)</p>
+                    @if (item.Link != null)
+                    {
+                        @Html.Partial("../../shared/partials/_button.cshtml", new { style = "btn-primary", data = item.Link })
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

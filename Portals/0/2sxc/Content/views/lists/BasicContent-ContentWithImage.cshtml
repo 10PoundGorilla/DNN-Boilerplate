@@ -1,0 +1,63 @@
+@inherits Custom.Hybrid.Razor14
+@using ToSic.Razor.Blade
+@* This inherits statement gets you features like App, CmsContext, Data etc. - you can delete this comment *@
+
+@{
+    var items = AsList(Data);
+
+    var imageSettings = Kit.Image.Settings("Content", width: 600, height: 400, quality: 0.8);
+}
+
+@Html.Partial("../../shared/partials/_heading.cshtml", new { data = Header, defaultHeadingLevel = "h2" })
+
+<div class="row">
+    @foreach (var item in AsList(Content))
+    {
+
+        foreach (var img in AsList(item.Image))
+        {
+            var altText = Text.First(img.Field("Image").Metadata.Description, img.AltText);
+
+            <div class="col-12 col-md-6" @Html.Partial("../../shared/partials/_toolbar.cshtml", new
+                {
+                    data = img,
+                    type =
+        "edit-only"
+                })>
+                @Kit.Image.Picture(img.Field("Image"), settings: imageSettings, imgClass: "d-block w-100", imgAlt: altText)
+            </div>
+        }
+
+        <div class="col-12 col-md-6" @Html.Partial("../../shared/partials/_toolbar.cshtml", new
+            {
+                data = item,
+                type =
+        "list-item-default"
+            })>
+            @if (Text.Has(item.Heading))
+            {
+                string headingLevel = Text.First(item.Presentation.HeadingLevel, "h2");
+                string headingSize = Text.First(item.Presentation.HeadingSize, "");
+                @Tag.Custom(headingLevel, item.Heading).Class(headingSize)
+            }
+            @if (Text.Has(item.Subheading))
+            {
+                @Tag.Strong(item.Subheading)
+            }
+            @if (Text.Has(item.BodyContent))
+            {
+                @Html.Raw(item.BodyContent)
+            }
+            @foreach (var link in AsList(item.Links as object))
+            {
+                @Html.Partial("../../shared/partials/_button.cshtml", new
+                    {
+                        data = link,
+                        style =
+                         Text.First(item.Presentation.LinkStyle, "btn-primary"),
+                        enableToolbar = true
+                    })
+            }
+        </div>
+    }
+</div>

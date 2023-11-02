@@ -1,0 +1,16 @@
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/mixins/banner";
+@include bsBanner("");
+
+// Import Bootstrap functions first
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/functions";
+
+// Custom variables
+@import "../../../../../_default/Skins/boilerplate/css/scss/variables";
+
+// Bootstrap Core
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/variables";
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/variables-dark";
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/maps";
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/mixins";
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/utilities";
+@import "../../../../../_default/Skins/boilerplate/css/bootstrap/modal";

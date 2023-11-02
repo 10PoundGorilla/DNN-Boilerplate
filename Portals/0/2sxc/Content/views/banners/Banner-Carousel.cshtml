@@ -12,46 +12,49 @@
 
     var indicatorIndex = 0; // Index to track value in indicator loop
     var slideIndex = 0; // Index to track value in slide loop
-    
+
 }
 
 <div id="@(carouselId)" class="carousel slide">
     <div class="carousel-indicators">
-        @foreach(var item in AsList(items)) {
+        @foreach (var item in AsList(items))
+        {
             var activeModifier = (indicatorIndex == defaultSlide) ? "active" : "";
             var ariaCurrent = (indicatorIndex == defaultSlide) ? "true" : "false";
 
-            <button
-                type="button"
-                data-bs-target="#@(carouselId)"
-                data-bs-slide-to="@(indicatorIndex)"
-                class="@(activeModifier)"
-                aria-current="@(ariaCurrent)"
-                aria-label="Slide @(indicatorIndex)"
-            ></button>
-            
+            <button type="button" data-bs-target="#@(carouselId)" data-bs-slide-to="@(indicatorIndex)"
+                class="@(activeModifier)" aria-current="@(ariaCurrent)" aria-label="Slide @(indicatorIndex)"></button>
+
             indicatorIndex++;
         }
     </div>
     <div class="carousel-inner">
-        @foreach(var item in AsList(items)) {
+        @foreach (var item in AsList(items))
+        {
             @* Only display Remove option if more than one item exists *@
             var toolbar = (items.Count() > 1)
-                ? Html.Partial("partials/_toolbar.cshtml", new { data = item, type = "list-item-default" })
-                : Html.Partial("partials/_toolbar.cshtml", new { data = item, type = "list-item-no-remove" });
+            ? Html.Partial("../../shared/partials/_toolbar.cshtml", new { data = item, type = "list-item-default" })
+            : Html.Partial("../../shared/partials/_toolbar.cshtml", new { data = item, type = "list-item-no-remove" });
 
             var altText = Text.First(item.Image.Field("Image").Metadata.Description, item.Image.AltText);
             var activeModifier = (slideIndex == defaultSlide) ? "active" : "";
 
             <div class="carousel-item @(activeModifier)" @toolbar>
-                @Kit.Image.Img(item.Image.Field("Image"), settings: imageSettings, imgClass: "d-block w-100", imgAlt: altText)
+                @Kit.Image.Img(item.Image.Field("Image"), settings: imageSettings, imgClass: "d-block w-100", imgAlt:
+                         altText)
                 <div class="carousel-caption d-none d-md-block">
                     <h5>@(item.Heading)</h5>
                     <p class="fw-bold">@(item.Subheading)</p>
                     <p>@(item.BodyContent)</p>
                     <p>
-                        @foreach(var link in AsList(item.Links)) {
-                            @Html.Partial("partials/_button.cshtml", new { data = link, style = "btn-primary", enableToolbar = false })
+                        @foreach (var link in AsList(item.Links))
+                        {
+                            @Html.Partial("../../shared/partials/_button.cshtml", new
+                                {
+                                    data = link,
+                                    style = "btn-primary",
+                                    enableToolbar = false
+                                })
                         }
                     </p>
                 </div>
@@ -61,11 +64,11 @@
         }
     </div>
     @* <button class="carousel-control-prev" type="button" data-bs-target="#@(carouselId)" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#@(carouselId)" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
     </button> *@
 </div>
