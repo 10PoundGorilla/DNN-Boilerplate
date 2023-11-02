@@ -1,6 +1,6 @@
 @inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade
-
+<link rel="stylesheet" type="text/css" href="@App.Path/dist/styles.min.css" data-enableoptimizations="bottom" />
 @{
     var items = AsList(Data);
     var imageSettings = Kit.Image.Settings("Content", width: 1200, height: 400, quality: 0.8);
