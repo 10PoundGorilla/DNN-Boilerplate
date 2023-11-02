@@ -12,7 +12,7 @@ You can [read about the many-to-many compilation process on the SASS Lang websit
 
 ## Example implementation:
 
-### [Video Guide](https://www.loom.com/share/b8389e8df66e4db49a0280dea99ea6f6?sid=fbc3d750-446a-4b37-8ad0-ebebd1676d5f)
+### [Video Guide](https://www.loom.com/share/a9a6e03f3a6245f5ad08e03199b3b2b9?sid=3298c06a-9bc9-44ed-825a-1b95568003fb)
 
 For this example and ease of reading, I broke out the command into multiple lines. To run this, you will need to convert it to one string. 
 - Like a normal sass-watch you specify you source .scss file, and your output file.
