@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
 using ToSic.Razor.Blade;
+using ToSic.Sxc.Data;
 
-public class LinkHelper: Custom.Hybrid.Code12
+public class LinkHelper: Custom.Hybrid.Code14
 {
   // Process Link entity and pass relevant properties to the actual method
-  public dynamic LinkInfo(dynamic item) {
-    return LinkInfo(item.URL, item.Target);
+  public dynamic LinkInfo(ITypedItem item) {
+    return LinkInfo(item.String("URL"), item.String("Target"));
   }
   
   // check a link, prepare target window, icon etc. based on various settings

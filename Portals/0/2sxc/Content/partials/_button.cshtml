@@ -26,17 +26,13 @@
 
   string styleClasses = (style == "") ? "" : string.Format("btn {0}", style);
 
+  var linkHelper = GetCode("../helpers/LinkHelper.cs");
+  var linkInfo = linkHelper.LinkInfo(btn);
+
   var displayText = btn.String("DisplayText");
   var linkUrl = btn.Url("URL");
-  var linkTarget = btn.String("Target");
-
-@*  The above replaces this link builder code that needs to be upgraded to new Typed version.
-
-  var linkHelper = CreateInstance("../helpers/LinkHelper.cs");
-  var linkInfo = linkHelper.LinkInfo(DynamicModel.Data);
   string linkTarget = linkInfo.Window;
 
-*@
   var toolbar = (enableToolbar) ? Html.Partial("_toolbar.cshtml", new { data = btn, type = "edit-or-remove", color = (style == "btn-primary") ? "var(--bs-secondary)" : "" }) : null;
 }
 
