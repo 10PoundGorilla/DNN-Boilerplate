@@ -1,1 +1,1 @@
-Add template files here or delete directory if not needed
+Add template files here or within the /views directory. If you place your views here, you can delete the /views directory if not needed.
