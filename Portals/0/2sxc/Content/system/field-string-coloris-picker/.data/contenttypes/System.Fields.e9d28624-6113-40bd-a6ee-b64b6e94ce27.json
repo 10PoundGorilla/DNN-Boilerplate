@@ -1,0 +1,572 @@
+{
+    "_": {
+      "V": 1
+    },
+    "ContentType": {
+      "Id": "e9d28624-6113-40bd-a6ee-b64b6e94ce27",
+      "Name": "@string-coloris-picker",
+      "Scope": "System.Fields",
+      "Description": null,
+      "Attributes": [
+        {
+          "Name": "Format",
+          "Type": "String",
+          "InputType": "string-dropdown",
+          "IsTitle": true,
+          "Metadata": [
+            {
+              "Id": 5995,
+              "Version": 2,
+              "Guid": "b6f64d58-dbb7-447b-bae2-28210a15a416",
+              "Type": {
+                "Name": "@All",
+                "Id": "@All"
+              },
+              "Attributes": {
+                "String": {
+                  "CustomJavaScript": {
+                    "*": ""
+                  },
+                  "DefaultValue": {
+                    "*": "hex"
+                  },
+                  "Information": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": "string-dropdown"
+                  },
+                  "Name": {
+                    "*": "Format"
+                  },
+                  "Notes": {
+                    "*": "<p>Sets the preferred color string format (expand notes for details)</p>\n<p><strong>hex:</strong> outputs #RRGGBB or #RRGGBBAA (default).<br><strong>rgb:</strong> outputs rgb(R, G, B) or rgba(R, G, B, A).<br><strong>hsl:</strong> outputs hsl(H, S, L) or hsla(H, S, L, A).<br><strong>auto:</strong> guesses the format from the active input field. Defaults to hex if it fails.<br><strong>mixed:</strong> outputs #RRGGBB when alpha is 1; otherwise rgba(R, G, B, A).</p>"
+                  },
+                  "Placeholder": {
+                    "*": ""
+                  },
+                  "Tooltip": {
+                    "*": ""
+                  },
+                  "ValidationRegExJavaScript": {
+                    "*": ""
+                  }
+                },
+                "Hyperlink": {
+                  "HelpLink": {
+                    "*": ""
+                  }
+                },
+                "Entity": {
+                  "Errors": {
+                    "*": []
+                  },
+                  "Formulas": {
+                    "*": []
+                  },
+                  "Warnings": {
+                    "*": []
+                  }
+                },
+                "Boolean": {
+                  "Disabled": {
+                    "*": false
+                  },
+                  "DisableTranslation": {
+                    "*": false
+                  },
+                  "Required": {
+                    "*": false
+                  },
+                  "VisibleInEditUI": {
+                    "*": true
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6000,
+              "Version": 1,
+              "Guid": "2793561c-daf9-41b5-a359-96b63ab9f3a7",
+              "Type": {
+                "Name": "@String",
+                "Id": "@String"
+              },
+              "Attributes": {
+                "String": {
+                  "DropdownValues": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": ""
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6001,
+              "Version": 1,
+              "Guid": "b2580e22-8a82-4156-8cc9-e23054f4f192",
+              "Type": {
+                "Name": "@string-dropdown",
+                "Id": "@string-dropdown"
+              },
+              "Attributes": {
+                "String": {
+                  "DropdownValues": {
+                    "*": "hex:Hex\nrgb:RGB\nhsl:HSL\nauto:Auto\nmixed:Mixed"
+                  },
+                  "DropdownValuesFormat": {
+                    "*": "value-label"
+                  },
+                  "Separator": {
+                    "*": ","
+                  }
+                },
+                "Boolean": {
+                  "AllowMultiValue": {
+                    "*": false
+                  },
+                  "EnableTextEntry": {
+                    "*": false
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            }
+          ]
+        },
+        {
+          "Name": "Alpha",
+          "Type": "Boolean",
+          "InputType": "boolean-default",
+          "IsTitle": false,
+          "Metadata": [
+            {
+              "Id": 5996,
+              "Version": 2,
+              "Guid": "b340e444-7ad0-4438-9c3e-2dec2ca9e932",
+              "Type": {
+                "Name": "@All",
+                "Id": "@All"
+              },
+              "Attributes": {
+                "String": {
+                  "CustomJavaScript": {
+                    "*": ""
+                  },
+                  "DefaultValue": {
+                    "*": "false"
+                  },
+                  "Information": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": "boolean-default"
+                  },
+                  "Name": {
+                    "*": "Enable alpha support?"
+                  },
+                  "Notes": {
+                    "*": "<p>Enable or disable alpha support. When disabled, it will strip the alpha value from the existing color string in all formats.</p>"
+                  },
+                  "Placeholder": {
+                    "*": ""
+                  },
+                  "Tooltip": {
+                    "*": ""
+                  },
+                  "ValidationRegExJavaScript": {
+                    "*": ""
+                  }
+                },
+                "Hyperlink": {
+                  "HelpLink": {
+                    "*": ""
+                  }
+                },
+                "Entity": {
+                  "Errors": {
+                    "*": []
+                  },
+                  "Formulas": {
+                    "*": []
+                  },
+                  "Warnings": {
+                    "*": []
+                  }
+                },
+                "Boolean": {
+                  "Disabled": {
+                    "*": false
+                  },
+                  "DisableTranslation": {
+                    "*": false
+                  },
+                  "Required": {
+                    "*": false
+                  },
+                  "VisibleInEditUI": {
+                    "*": true
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6002,
+              "Version": 1,
+              "Guid": "eed876dc-21bc-4d61-8270-c6e17aa8ebdf",
+              "Type": {
+                "Name": "@Boolean",
+                "Id": "@Boolean"
+              },
+              "Attributes": {
+                "String": {
+                  "TitleFalse": {
+                    "*": ""
+                  },
+                  "TitleIndeterminate": {
+                    "*": ""
+                  },
+                  "TitleTrue": {
+                    "*": ""
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            }
+          ]
+        },
+        {
+          "Name": "ForceAlpha",
+          "Type": "Boolean",
+          "InputType": "boolean-default",
+          "IsTitle": false,
+          "Metadata": [
+            {
+              "Id": 5997,
+              "Version": 2,
+              "Guid": "ea83a2cf-c7e8-4f2c-9eb3-01a6599cb143",
+              "Type": {
+                "Name": "@All",
+                "Id": "@All"
+              },
+              "Attributes": {
+                "String": {
+                  "CustomJavaScript": {
+                    "*": ""
+                  },
+                  "DefaultValue": {
+                    "*": "false"
+                  },
+                  "Information": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": "boolean-default"
+                  },
+                  "Name": {
+                    "*": "Force alpha values?"
+                  },
+                  "Notes": {
+                    "*": "<p>Set to true to always include the alpha value in the color value even if the opacity is 100%.</p>"
+                  },
+                  "Placeholder": {
+                    "*": ""
+                  },
+                  "Tooltip": {
+                    "*": ""
+                  },
+                  "ValidationRegExJavaScript": {
+                    "*": ""
+                  }
+                },
+                "Hyperlink": {
+                  "HelpLink": {
+                    "*": ""
+                  }
+                },
+                "Entity": {
+                  "Errors": {
+                    "*": []
+                  },
+                  "Formulas": {
+                    "*": []
+                  },
+                  "Warnings": {
+                    "*": []
+                  }
+                },
+                "Boolean": {
+                  "Disabled": {
+                    "*": false
+                  },
+                  "DisableTranslation": {
+                    "*": false
+                  },
+                  "Required": {
+                    "*": false
+                  },
+                  "VisibleInEditUI": {
+                    "*": true
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6003,
+              "Version": 1,
+              "Guid": "ffe7c7cc-8b8e-43b9-9c00-c08a65d2bc5e",
+              "Type": {
+                "Name": "@Boolean",
+                "Id": "@Boolean"
+              },
+              "Attributes": {
+                "String": {
+                  "TitleFalse": {
+                    "*": ""
+                  },
+                  "TitleIndeterminate": {
+                    "*": ""
+                  },
+                  "TitleTrue": {
+                    "*": ""
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            }
+          ]
+        },
+        {
+          "Name": "Swatches",
+          "Type": "String",
+          "InputType": "string-default",
+          "IsTitle": false,
+          "Metadata": [
+            {
+              "Id": 5998,
+              "Version": 2,
+              "Guid": "c0137880-a501-4588-8916-785099762cca",
+              "Type": {
+                "Name": "@All",
+                "Id": "@All"
+              },
+              "Attributes": {
+                "String": {
+                  "CustomJavaScript": {
+                    "*": ""
+                  },
+                  "DefaultValue": {
+                    "*": ""
+                  },
+                  "Information": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": "string-default"
+                  },
+                  "Name": {
+                    "*": "Swatches"
+                  },
+                  "Notes": {
+                    "*": "<p>Place recommended color codes - one on each line. All formats supported, but avoid named colors with spaces (e.g. &ldquo;alice blue&rdquo;). If empty, no swatches will be shown.</p>"
+                  },
+                  "Placeholder": {
+                    "*": ""
+                  },
+                  "Tooltip": {
+                    "*": ""
+                  },
+                  "ValidationRegExJavaScript": {
+                    "*": ""
+                  }
+                },
+                "Hyperlink": {
+                  "HelpLink": {
+                    "*": ""
+                  }
+                },
+                "Entity": {
+                  "Errors": {
+                    "*": []
+                  },
+                  "Formulas": {
+                    "*": []
+                  },
+                  "Warnings": {
+                    "*": []
+                  }
+                },
+                "Boolean": {
+                  "Disabled": {
+                    "*": false
+                  },
+                  "DisableTranslation": {
+                    "*": false
+                  },
+                  "Required": {
+                    "*": false
+                  },
+                  "VisibleInEditUI": {
+                    "*": true
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6004,
+              "Version": 1,
+              "Guid": "4d1d2bf2-7b74-41b6-8e0f-24a167df9ec4",
+              "Type": {
+                "Name": "@String",
+                "Id": "@String"
+              },
+              "Attributes": {
+                "String": {
+                  "DropdownValues": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": ""
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6005,
+              "Version": 1,
+              "Guid": "6720fdf1-d2e9-4f64-ba7f-19d492aaf42a",
+              "Type": {
+                "Name": "@string-default",
+                "Id": "@string-default"
+              },
+              "Attributes": {
+                "String": {
+                  "InputFontFamily": {
+                    "*": ""
+                  }
+                },
+                "Number": {
+                  "RowCount": {
+                    "*": 10
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            }
+          ]
+        },
+        {
+          "Name": "SwatchesOnly",
+          "Type": "Boolean",
+          "InputType": "boolean-default",
+          "IsTitle": false,
+          "Metadata": [
+            {
+              "Id": 5999,
+              "Version": 2,
+              "Guid": "59780e02-64fa-42db-872e-9e1883765700",
+              "Type": {
+                "Name": "@All",
+                "Id": "@All"
+              },
+              "Attributes": {
+                "String": {
+                  "CustomJavaScript": {
+                    "*": ""
+                  },
+                  "DefaultValue": {
+                    "*": ""
+                  },
+                  "Information": {
+                    "*": ""
+                  },
+                  "InputType": {
+                    "*": "boolean-default"
+                  },
+                  "Name": {
+                    "*": "Only allow swatches?"
+                  },
+                  "Notes": {
+                    "*": "<p>Set to true to hide all the color picker widgets (spectrum, hue, ...) except the swatches.</p>"
+                  },
+                  "Placeholder": {
+                    "*": ""
+                  },
+                  "Tooltip": {
+                    "*": ""
+                  },
+                  "ValidationRegExJavaScript": {
+                    "*": ""
+                  }
+                },
+                "Hyperlink": {
+                  "HelpLink": {
+                    "*": ""
+                  }
+                },
+                "Entity": {
+                  "Errors": {
+                    "*": []
+                  },
+                  "Formulas": {
+                    "*": []
+                  },
+                  "Warnings": {
+                    "*": []
+                  }
+                },
+                "Boolean": {
+                  "Disabled": {
+                    "*": false
+                  },
+                  "DisableTranslation": {
+                    "*": false
+                  },
+                  "Required": {
+                    "*": false
+                  },
+                  "VisibleInEditUI": {
+                    "*": true
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            },
+            {
+              "Id": 6006,
+              "Version": 1,
+              "Guid": "6432a7be-fd89-4f28-aab5-98490c9dc626",
+              "Type": {
+                "Name": "@Boolean",
+                "Id": "@Boolean"
+              },
+              "Attributes": {
+                "String": {
+                  "TitleFalse": {
+                    "*": ""
+                  },
+                  "TitleIndeterminate": {
+                    "*": ""
+                  },
+                  "TitleTrue": {
+                    "*": ""
+                  }
+                }
+              },
+              "Owner": "dnn:userid=13"
+            }
+          ]
+        }
+      ],
+      "Metadata": []
+    },
+    "Entities": []
+  }
