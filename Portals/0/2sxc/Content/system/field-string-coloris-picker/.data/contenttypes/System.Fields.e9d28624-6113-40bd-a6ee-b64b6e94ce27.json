@@ -374,7 +374,7 @@
                     "*": "Swatches"
                   },
                   "Notes": {
-                    "*": "<p>Place recommended color codes - one on each line. All formats supported, but avoid named colors with spaces (e.g. &ldquo;alice blue&rdquo;). If empty, no swatches will be shown.</p>"
+                    "*": "<p>Place recommended color codes - one on each line. All formats supported. Invalid colors will result in broken swatches. If empty, no swatches will be shown.</p>"
                   },
                   "Placeholder": {
                     "*": ""
